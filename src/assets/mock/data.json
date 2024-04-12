@@ -1,0 +1,515 @@
+{
+    "diagnostics": [
+        {
+            "d_id": 1,
+            "d_name": "CBC",
+            "d_cost": 200
+        },
+        {
+            "d_id": 2,
+            "d_name": "Urinalysis",
+            "d_cost": 155
+        },
+        {
+            "d_id": 3,
+            "d_name": "Lipid Panel",
+            "d_cost": 200
+        },
+        {
+            "d_id": 4,
+            "d_name": "LFT",
+            "d_cost": 160
+        },
+        {
+            "d_id": 5,
+            "d_name": "ECG",
+            "d_cost": 60
+        },
+        {
+            "d_id": 6,
+            "d_name": "TFT",
+            "d_cost": 120
+        },
+        {
+            "d_id": 7,
+            "d_name": "Prothrombin Time",
+            "d_cost": 200
+        },
+        {
+            "d_id": 8,
+            "d_name": "Rheumatoid Factor",
+            "d_cost": 40
+        },
+        {
+            "d_id": 9,
+            "d_name": "Spirometry",
+            "d_cost": 100
+        },
+        {
+            "d_id": 10,
+            "d_name": "Antibody Test",
+            "d_cost": 55
+        }
+    ],
+    "patients": [
+        {
+            "p_id": "6W91FG8FX74",
+            "p_name": "Wenonah Sapsed",
+            "p_age": 28,
+            "doj": "2023-10-17 12:54:31",
+            "bedtype": "semi-private",
+            "address": "84378 Anniversary Park",
+            "state": "Texas",
+            "city": "Tieremu",
+            "status": "active",
+            "doctor_assigned": true
+        },
+        {
+            "p_id": "9F88F79JX12",
+            "p_name": "Bianca Rooze",
+            "p_age": 66,
+            "doj": "2024-02-05 13:40:24",
+            "bedtype": "private",
+            "address": "37 Monterey Park",
+            "state": "Texas",
+            "city": "Cam Lộ",
+            "status": "active",
+            "doctor_assigned": true
+        },
+        {
+            "p_id": "5VX6T82GR74",
+            "p_name": "Maggi Pettigrew",
+            "p_age": 21,
+            "doj": "2023-10-10 21:09:01",
+            "bedtype": "private",
+            "address": "607 Laurel Place",
+            "state": "California",
+            "city": "Gandi",
+            "status": "discharged",
+            "doctor_assigned": true
+        },
+        {
+            "p_id": "1DH8NW2XE34",
+            "p_name": "Taylor Larrington",
+            "p_age": 23,
+            "doj": "2024-04-05 05:59:20",
+            "bedtype": "semi-private",
+            "address": "5 Corben Place",
+            "state": "California",
+            "city": "Savski Venac",
+            "status": "discharged",
+            "doctor_assigned": false
+        },
+        {
+            "p_id": "9EP9NK7RJ86",
+            "p_name": "Rosette Kitcatt",
+            "p_age": 33,
+            "doj": "2024-03-01 13:15:13",
+            "bedtype": "semi-private",
+            "address": "745 Vermont Drive",
+            "state": "California",
+            "city": "Oehaunu",
+            "status": "active",
+            "doctor_assigned": true
+        },
+        {
+            "p_id": "6CW0GJ7XJ22",
+            "p_name": "Olenka Crommett",
+            "p_age": 60,
+            "doj": "2024-01-22 17:07:48",
+            "bedtype": "semi-private",
+            "address": "635 Pawling Point",
+            "state": "Texas",
+            "city": "Yazman",
+            "status": "active",
+            "doctor_assigned": true
+        },
+        {
+            "p_id": "1H05UE9WR84",
+            "p_name": "Clara Haile",
+            "p_age": 31,
+            "doj": "2023-11-26 10:11:36",
+            "bedtype": "private",
+            "address": "4 Portage Crossing",
+            "state": "Arizona",
+            "city": "Lyubeshiv",
+            "status": "active",
+            "doctor_assigned": true
+        },
+        {
+            "p_id": "2MU5W39YP69",
+            "p_name": "Franky Blunsom",
+            "p_age": 58,
+            "doj": "2023-12-22 19:05:59",
+            "bedtype": "private",
+            "address": "72 Vermont Point",
+            "state": "California",
+            "city": "Paquera",
+            "status": "active",
+            "doctor_assigned": true
+        },
+        {
+            "p_id": "7Y01GF7MT87",
+            "p_name": "Doe Waddy",
+            "p_age": 37,
+            "doj": "2023-06-04 11:26:26",
+            "bedtype": "private",
+            "address": "3 Miller Parkway",
+            "state": "Rhône-Alpes",
+            "city": "La Ravoire",
+            "status": "discharged",
+            "doctor_assigned": true
+        },
+        {
+            "p_id": "6C13JD7VK17",
+            "p_name": "Jackie Stodhart",
+            "p_age": 73,
+            "doj": "2023-12-14 06:18:07",
+            "bedtype": "semi-private",
+            "address": "0521 Schurz Road",
+            "state": "Arizona",
+            "city": "Tagapul-an",
+            "status": "active",
+            "doctor_assigned": true
+        }
+    ],
+    "doctors": [
+        {
+            "doc_id": "4VV1QD3KM94",
+            "doc_name": "Georgette Koppel",
+            "doc_age": 43,
+            "specialization": "Georgette",
+            "email": "gkoppel0@nbcnews.com",
+            "mobile": "307-722-5130",
+            "address": "60 Pond Avenue",
+            "state": "Wyoming",
+            "city": "Cheyenne"
+        },
+        {
+            "doc_id": "2XN4V44MC74",
+            "doc_name": "Briney McOwen",
+            "doc_age": 33,
+            "specialization": "Briney",
+            "email": "bmcowen1@kickstarter.com",
+            "mobile": "210-850-4882",
+            "address": "93960 Mallard Crossing",
+            "state": "Texas",
+            "city": "San Antonio"
+        },
+        {
+            "doc_id": "5RR0C79RW48",
+            "doc_name": "Rosella Hanhardt",
+            "doc_age": 53,
+            "specialization": "Rosella",
+            "email": "rhanhardt2@pen.io",
+            "mobile": "317-626-1642",
+            "address": "12702 Victoria Lane",
+            "state": "Indiana",
+            "city": "Indianapolis"
+        },
+        {
+            "doc_id": "6G51D71GQ42",
+            "doc_name": "Noe Sigart",
+            "doc_age": 46,
+            "specialization": "Noe",
+            "email": "nsigart3@theglobeandmail.com",
+            "mobile": "202-703-0164",
+            "address": "82436 Ramsey Hill",
+            "state": "District of Columbia",
+            "city": "Washington"
+        },
+        {
+            "doc_id": "5K22VA8QU99",
+            "doc_name": "Marcus Rizzolo",
+            "doc_age": 51,
+            "specialization": "Marcus",
+            "email": "mrizzolo4@abc.net.au",
+            "mobile": "912-725-6671",
+            "address": "79805 Welch Way",
+            "state": "Georgia",
+            "city": "Savannah"
+        },
+        {
+            "doc_id": "6JG0A54CK99",
+            "doc_name": "Micheal Guiden",
+            "doc_age": 38,
+            "specialization": "Micheal",
+            "email": "mguiden5@berkeley.edu",
+            "mobile": "614-499-2747",
+            "address": "36 Stuart Alley",
+            "state": "Ohio",
+            "city": "Columbus"
+        },
+        {
+            "doc_id": "9NN4Y39UX41",
+            "doc_name": "Mead Lassetter",
+            "doc_age": 54,
+            "specialization": "Mead",
+            "email": "mlassetter6@springer.com",
+            "mobile": "402-609-5606",
+            "address": "53877 Thackeray Avenue",
+            "state": "Nebraska",
+            "city": "Lincoln"
+        },
+        {
+            "doc_id": "7UH5FY8JN40",
+            "doc_name": "Larissa Gallichiccio",
+            "doc_age": 36,
+            "specialization": "Larissa",
+            "email": "lgallichiccio7@google.com",
+            "mobile": "480-898-7701",
+            "address": "1195 Fremont Point",
+            "state": "Arizona",
+            "city": "Phoenix"
+        },
+        {
+            "doc_id": "4M48UW3JU70",
+            "doc_name": "Emilie Armstead",
+            "doc_age": 42,
+            "specialization": "Emilie",
+            "email": "earmstead8@nydailynews.com",
+            "mobile": "559-784-3650",
+            "address": "83 Derek Center",
+            "state": "California",
+            "city": "Fresno"
+        },
+        {
+            "doc_id": "6UG6MC0DM69",
+            "doc_name": "Randolf Nesby",
+            "doc_age": 57,
+            "specialization": "Randolf",
+            "email": "rnesby9@eepurl.com",
+            "mobile": "913-243-7805",
+            "address": "2 Columbus Junction",
+            "state": "Kansas",
+            "city": "Shawnee Mission"
+        }
+    ],
+    "medicines": [
+        {
+            "med_id": 1,
+            "med_name": "Sodium Fluoride",
+            "quantity": 214,
+            "price": 24
+        },
+        {
+            "med_id": 2,
+            "med_name": "Sodium Chloride",
+            "quantity": 249,
+            "price": 14
+        },
+        {
+            "med_id": 3,
+            "med_name": "Antipyrine and Benzocaine",
+            "quantity": 433,
+            "price": 14
+        },
+        {
+            "med_id": 4,
+            "med_name": "Glycerin",
+            "quantity": 443,
+            "price": 11
+        },
+        {
+            "med_id": 5,
+            "med_name": "POTASSIUM CHLORIDE",
+            "quantity": 227,
+            "price": 20
+        },
+        {
+            "med_id": 6,
+            "med_name": "Amitriptyline Hydrochloride",
+            "quantity": 425,
+            "price": 7
+        },
+        {
+            "med_id": 7,
+            "med_name": "Mometasone Furoate",
+            "quantity": 467,
+            "price": 19
+        },
+        {
+            "med_id": 8,
+            "med_name": "TRETINOIN",
+            "quantity": 175,
+            "price": 24
+        },
+        {
+            "med_id": 9,
+            "med_name": "ETHYL ALCOHOL",
+            "quantity": 187,
+            "price": 20
+        },
+        {
+            "med_id": 10,
+            "med_name": "Glipizide",
+            "quantity": 355,
+            "price": 23
+        }
+    ],
+    "roomtype": [
+        {
+            "type": "private",
+            "price": 500
+        },
+        {
+            "type": "semi-private",
+            "price": 300
+        }
+    ],
+    "patient_doctor": [
+        {
+            "p_id": "6W91FG8FX74",
+            "doc_id": "4VV1QD3KM94"
+        },
+        {
+            "p_id": "9F88F79JX12",
+            "doc_id": "9NN4Y39UX41"
+        },
+        {
+            "p_id": "5VX6T82GR74",
+            "doc_id": "5RR0C79RW48"
+        },
+        {
+            "p_id": "9EP9NK7RJ86",
+            "doc_id": "5K22VA8QU99"
+        },
+        {
+            "p_id": "6CW0GJ7XJ22",
+            "doc_id": "4VV1QD3KM94"
+        },
+        {
+            "p_id": "1H05UE9WR84",
+            "doc_id": "5K22VA8QU99"
+        },
+        {
+            "p_id": "2MU5W39YP69",
+            "doc_id": "5RR0C79RW48"
+        },
+        {
+            "p_id": "7Y01GF7MT87",
+            "doc_id": "9NN4Y39UX41"
+        },
+        {
+            "p_id": "6C13JD7VK17",
+            "doc_id": "5RR0C79RW48"
+        }
+    ],
+    "diagnostics_ordered": [
+        {
+            "d_id": 3,
+            "p_id": "5VX6T82GR74",
+            "date_issued": "2023-11-19 21:18:18"
+        },
+        {
+            "d_id": 3,
+            "p_id": "1DH8NW2XE34",
+            "date_issued": "2023-05-19 07:46:55"
+        },
+        {
+            "d_id": 5,
+            "p_id": "7Y01GF7MT87",
+            "date_issued": "2023-07-23 12:28:00"
+        }
+    ],
+    "diagnostics_ordered_temp": [
+        {
+            "d_id": 6,
+            "p_id": "6W91FG8FX74",
+            "date_issued": "2023-09-28 23:15:59"
+        },
+        {
+            "d_id": 4,
+            "p_id": "9F88F79JX12",
+            "date_issued": "2023-12-25 19:43:39"
+        },
+        {
+            "d_id": 4,
+            "p_id": "6CW0GJ7XJ22",
+            "date_issued": "2023-05-31 06:54:05"
+        },
+        {
+            "d_id": 5,
+            "p_id": "6C13JD7VK17",
+            "date_issued": "2023-10-05 15:13:38"
+        }
+    ],
+    "medicines_issued": [
+        {
+            "med_id": 4,
+            "p_id": "5VX6T82GR74",
+            "quantity": 17,
+            "date_issued": "2024-03-15 07:28:59"
+        },
+        {
+            "med_id": 6,
+            "p_id": "1DH8NW2XE34",
+            "quantity": 18,
+            "date_issued": "2024-03-28 05:25:37"
+        },
+        {
+            "med_id": 6,
+            "p_id": "5VX6T82GR74",
+            "quantity": 15,
+            "date_issued": "2023-06-05 11:21:40"
+        },
+        {
+            "med_id": 4,
+            "p_id": "1DH8NW2XE34",
+            "quantity": 13,
+            "date_issued": "2024-03-31 10:53:43"
+        }
+    ],
+    "medicines_issued_temp": [
+        {
+            "med_id": 4,
+            "p_id": "6W91FG8FX74",
+            "quantity": 20,
+            "date_issued": "2023-12-03 20:37:24"
+        },
+        {
+            "med_id": 4,
+            "p_id": "9F88F79JX12",
+            "quantity": 11,
+            "date_issued": "2024-03-25 13:38:49"
+        },
+        {
+            "med_id": 3,
+            "p_id": "6CW0GJ7XJ22",
+            "quantity": 9,
+            "date_issued": "2024-03-10 11:55:18"
+        },
+        {
+            "med_id": 6,
+            "p_id": "6C13JD7VK17",
+            "quantity": 9,
+            "date_issued": "2023-12-28 21:39:48"
+        }
+    ],
+    "billing": [
+        {
+            "bill_id": "01HV7HXTMK0ZJN1NXG6MT34P21",
+            "p_id": "5VX6T82GR74",
+            "med_price": 11,
+            "d_price": 160,
+            "room_price": 500,
+            "total": 672
+        },
+        {
+            "bill_id": "01HV7HXTMM19WNK9G1ZPA82A3K",
+            "p_id": "1DH8NW2XE34",
+            "med_price": 11,
+            "d_price": 200,
+            "room_price": 300,
+            "total": 511
+        },
+        {
+            "bill_id": "01HV7HXTMN0QE8MDNTQF11Z8N8",
+            "p_id": "7Y01GF7MT87",
+            "med_price": 24,
+            "d_price": 200,
+            "room_price": 500,
+            "total": 724
+        }
+    ]
+}

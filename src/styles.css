@@ -1,1 +1,336 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --green: #006633;
+    --yellow: #ffcc33;
+
+    --border-width: 5px;
+}
+
+html,
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--green) !important;
+}
+
+.color-yellow {
+    color: var(--yellow)
+}
+
+header {
+    z-index: 100;
+}
+
+.items-center {
+    text-align: center;
+}
+
+.navbar {
+    background-color: var(--green);
+    border: var(--border-width) solid var(--green);
+}
+
+.navbar-brand {
+    color: #ccebde !important;
+}
+
+.navbar-brand img {
+    width: 2rem;
+    margin-top: -18px;
+}
+
+.navbar-nav {
+    background-color: var(--yellow);
+    position: absolute;
+    right: calc(var(--border-width) * -1);
+    width: 50%;
+}
+
+ul.navbar-nav::before {
+    border-bottom: 4.5rem solid var(--yellow);
+    border-left: 1.45rem solid transparent;
+    content: '';
+    height: 0;
+    left: -1.44rem;
+    position: absolute;
+    top: 0;
+    width: 0;
+}
+
+.nav-item:not(:last-of-type) {
+    margin-inline-end: 1rem;
+}
+
+.banner {
+    background-color: black;
+    position: relative;
+}
+
+.banner img {
+    padding: 1rem 0;
+    max-width: 12rem;
+    max-height: 14rem;
+}
+
+.dept-name {
+    color: #ccebde !important;
+    background-color: var(--green);
+    width: fit-content;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.dept-name::before {
+    border-bottom: 4.825rem solid var(--green);
+    border-left: 1.45rem solid transparent;
+    content: '';
+    height: 0;
+    left: -1.44rem;
+    position: absolute;
+    top: 0;
+    width: 0;
+}
+
+.required-indicator {
+    color: red;
+}
+
+.page-title-cont {
+    background-color: #eff0e7;
+    padding: 2rem 0;
+    font-weight: 900;
+}
+
+.survey {
+    color: var(--green);
+}
+
+.mr-5 {
+    margin-right: 5px;
+}
+
+.btn-green {
+    background-color: var(--green) !important;
+    color: #ccebde;
+}
+
+.btn-yellow {
+    background-color: var(--yellow) !important;
+    color: black;
+}
+
+.btn-green:hover {
+    background-color: var(--green);
+    color: black;
+}
+
+.btn-yellow:hover {
+    background-color: var(--yellow);
+    color: #ccebde;
+}
+
+.form-check-input:checked {
+    background-color: var(--green);
+    border-color: var(--green);
+}
+
+.form-control:focus,
+.form-check-input:focus,
+.form-select:focus {
+    box-shadow: 0 0 0 0.25rem rgba(0, 102, 51, 0.25) !important;
+    border-color: var(--green) !important;
+}
+
+.side-menu {
+    list-style-type: none;
+    padding: 0;
+}
+
+.side-menu li {
+    margin-bottom: 1rem;
+}
+
+.side-menu a {
+    text-decoration: none;
+    color: white;
+    background-color: var(--green) !important;
+    padding: 1rem 2rem;
+    width: 100%;
+}
+
+.side-menu a:hover {
+    background-color: #009c5f !important;
+}
+
+.accordion-item {
+    border: none !important;
+    margin-bottom: 1rem;
+}
+
+.accordion-header .accordion-button {
+    height: 3rem !important;
+    padding: 10px 15px;
+    background-color: var(--green) !important;
+
+    --bs-accordion-btn-focus-border-color: var(--green) !important;
+    --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(0, 102, 51, 0.25) !important;
+}
+
+.accordion-button:not(.collapsed) h6 {
+    color: white !important;
+}
+
+.accordion-header .accordion-button.collapsed {
+    background: #EFF0E7 !important;
+    border: 1px solid #d5d5d5;
+    color: #000;
+}
+
+.footer {
+    padding: 2rem;
+    background-color: #222222;
+    color: white;
+
+    background-image: url(https://www.gmu.edu/themes/custom/sf_mason_basic/images/audience-menu-mason-m.png);
+    background-size: 46.87rem;
+    background-repeat: no-repeat;
+    background-position: 98% 50%;
+    margin-top: 2.7rem;
+}
+
+.footer hr {
+    border-top: 2px solid white;
+}
+
+ul.footer-links {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* gap: 3rem; */
+    padding-top: 1rem;
+}
+
+.footer-information {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-block: 4rem 2rem;
+}
+
+.footer-logo {
+    position: relative;
+}
+
+.footer-logo::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 66px;
+    background: white;
+    bottom: 15px;
+}
+
+.footer-contact-details {
+    text-align: end;
+}
+
+.footer-link {
+    padding-inline: 2rem;
+}
+
+.footer-link:not(:last-child) {
+    border-right: 1px solid white;
+}
+
+.bg-whitesmk {
+    background-color: whitesmoke !important;
+}
+
+.gtr-cls {
+    padding-top: 1.5rem !important;
+}
+
+#grt {
+    color: #000 !important;
+}
+
+@media only screen and (max-width: 992px) {
+    .navbar {
+        border: none;
+    }
+
+    ul.footer-links {
+        display: unset;
+    }
+
+    .navbar-brand-cont {
+        display: flex;
+        justify-content: space-between;
+        border: var(--border-width) solid var(--green);
+    }
+
+    .navbar-nav {
+        position: relative;
+        right: unset;
+        width: 100%;
+    }
+
+    .dept-name {
+        position: static;
+        width: 100%;
+    }
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead th {
+    background-color: var(--green) !important;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid var(--green);
+}
+
+app-student-survey {
+    background-color: whitesmoke !important;
+}
+
+
+
+.my-40 {
+    margin-block: calc(0.25rem * 40);
+}
+
+.offcanvas.new-patient-form-panel {
+    --bs-offcanvas-width: 600px !important;
+}
