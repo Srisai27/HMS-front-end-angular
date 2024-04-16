@@ -1,0 +1,58 @@
+<div class="offcanvas-header">
+    <h4 class="offcanvas-title ps-2" id="offcanvas-basic-title">{{ patient ? 'Update Patient' : 'Add Patient' }}</h4>
+    <button type="button" class="btn-close" aria-label="Close"
+        (click)="activeOffcanvas.dismiss('Cross click')"></button>
+</div>
+<div class="offcanvas-body pt-0">
+    <form class="px-2 pb-2 mb-4" [formGroup]="patientForm" (ngSubmit)="addOrUpdatePatient()">
+
+        <div class="mb-3">
+            <label class="form-label" for="name">Name</label>
+            <input class="form-control" id="name" type="text" formControlName="p_name">
+        </div>
+        <div class="mb-3">
+            <div class="row">
+                <div class="col-4">
+                    <label class="form-label" for="age">Age</label>
+                    <input class="form-control" id="age" type="text" formControlName="p_age">
+                </div>
+                <div class="col-8">
+                    <label class="form-label" for="doj">Date of joining</label>
+                    <input class="form-control" id="doj" type="date" formControlName="doj">
+                </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="bedtype">Bedtype</label>
+            <select class="form-select" id=" bedtype" formControlName="bedtype">
+                <option class="text-capitalize" [value]=record.type *ngFor="let record of bedtypes">{{ record?.type }}
+                </option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="address">Address</label>
+            <input class="form-control" id="address" type="text" formControlName="address">
+        </div>
+        <div class="mb-3">
+            <div class="row">
+                <div class="col">
+                    <label class="form-label" for="city">City</label>
+                    <input class="form-control" id="city" type="text" formControlName="city">
+                </div>
+                <div class="col">
+                    <label class="form-label" for="state">State</label>
+                    <input class="form-control" id="state" type="text" formControlName="state">
+                </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="doc_id">Doctor</label>
+            <select class="form-select" id="doc_id" formControlName="doc_id">
+                <option class="text-capitalize" [value]=record.doc_id *ngFor="let record of doctors">{{ record?.doc_name
+                    }}
+                </option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-green mt-4 text-white">Submit</button>
+    </form>
+</div>

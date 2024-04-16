@@ -1,13 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
-import { PatientComponent } from './components/patient/patient.component';
-import { DoctorComponent } from './components/doctor/doctor.component';
+import { PatientComponent } from './components/patients/patient/patient.component';
+import { DoctorComponent } from './components/doctors/doctor/doctor.component';
+import { PatientDetailsComponent } from './components/patients/patient-details/patient-details.component';
+import { DoctorDetailsComponent } from './components/doctors/doctor-details/doctor-details.component';
+import { MedicineComponent } from './components/medicines/medicine/medicine.component';
+import { DiagnosticComponent } from './components/diagnostics/diagnostic/diagnostic.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'patient', component: PatientComponent },
-  { path: 'doctor', component: DoctorComponent }
+  { path: 'patient/:id', component: PatientDetailsComponent },
+  { path: 'doctor', component: DoctorComponent },
+  { path: 'doctor/:id', component: DoctorDetailsComponent },
+  { path: 'medicine', component: MedicineComponent },
+  { path: 'diagnostic', component: DiagnosticComponent }
 ];
 
 @NgModule({

@@ -23,6 +23,10 @@ h6 {
     color: var(--yellow)
 }
 
+.text-green {
+    color: var(--green)
+}
+
 header {
     z-index: 100;
 }
@@ -332,5 +336,10 @@ app-student-survey {
 }
 
 .offcanvas.new-patient-form-panel {
-    --bs-offcanvas-width: 600px !important;
+    --bs-offcanvas-width: 500px !important;
+}
+
+.bill-payment-modal .modal-content {
+    background-color: transparent;
+    border: none;
 }

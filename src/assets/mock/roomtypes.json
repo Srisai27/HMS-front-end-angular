@@ -1,0 +1,10 @@
+[
+    {
+        "type": "private",
+        "price": 500
+    },
+    {
+        "type": "semi-private",
+        "price": 300
+    }
+]

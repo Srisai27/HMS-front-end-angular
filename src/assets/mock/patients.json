@@ -1,0 +1,122 @@
+[
+    {
+        "p_id": "6W91FG8FX74",
+        "p_name": "Wenonah Sapsed",
+        "p_age": 28,
+        "doj": "2023-10-17 12:54:31",
+        "bedtype": "semi-private",
+        "address": "84378 Anniversary Park",
+        "state": "Texas",
+        "city": "Tieremu",
+        "status": "active",
+        "doctor_assigned": true
+    },
+    {
+        "p_id": "9F88F79JX12",
+        "p_name": "Bianca Rooze",
+        "p_age": 66,
+        "doj": "2024-02-05 13:40:24",
+        "bedtype": "private",
+        "address": "37 Monterey Park",
+        "state": "Texas",
+        "city": "Cam Lộ",
+        "status": "active",
+        "doctor_assigned": true
+    },
+    {
+        "p_id": "5VX6T82GR74",
+        "p_name": "Maggi Pettigrew",
+        "p_age": 21,
+        "doj": "2023-10-10 21:09:01",
+        "bedtype": "private",
+        "address": "607 Laurel Place",
+        "state": "California",
+        "city": "Gandi",
+        "status": "discharged",
+        "doctor_assigned": true
+    },
+    {
+        "p_id": "1DH8NW2XE34",
+        "p_name": "Taylor Larrington",
+        "p_age": 23,
+        "doj": "2024-04-05 05:59:20",
+        "bedtype": "semi-private",
+        "address": "5 Corben Place",
+        "state": "California",
+        "city": "Savski Venac",
+        "status": "discharged",
+        "doctor_assigned": false
+    },
+    {
+        "p_id": "9EP9NK7RJ86",
+        "p_name": "Rosette Kitcatt",
+        "p_age": 33,
+        "doj": "2024-03-01 13:15:13",
+        "bedtype": "semi-private",
+        "address": "745 Vermont Drive",
+        "state": "California",
+        "city": "Oehaunu",
+        "status": "active",
+        "doctor_assigned": true
+    },
+    {
+        "p_id": "6CW0GJ7XJ22",
+        "p_name": "Olenka Crommett",
+        "p_age": 60,
+        "doj": "2024-01-22 17:07:48",
+        "bedtype": "semi-private",
+        "address": "635 Pawling Point",
+        "state": "Texas",
+        "city": "Yazman",
+        "status": "active",
+        "doctor_assigned": true
+    },
+    {
+        "p_id": "1H05UE9WR84",
+        "p_name": "Clara Haile",
+        "p_age": 31,
+        "doj": "2023-11-26 10:11:36",
+        "bedtype": "private",
+        "address": "4 Portage Crossing",
+        "state": "Arizona",
+        "city": "Lyubeshiv",
+        "status": "active",
+        "doctor_assigned": true
+    },
+    {
+        "p_id": "2MU5W39YP69",
+        "p_name": "Franky Blunsom",
+        "p_age": 58,
+        "doj": "2023-12-22 19:05:59",
+        "bedtype": "private",
+        "address": "72 Vermont Point",
+        "state": "California",
+        "city": "Paquera",
+        "status": "active",
+        "doctor_assigned": true
+    },
+    {
+        "p_id": "7Y01GF7MT87",
+        "p_name": "Doe Waddy",
+        "p_age": 37,
+        "doj": "2023-06-04 11:26:26",
+        "bedtype": "private",
+        "address": "3 Miller Parkway",
+        "state": "Rhône-Alpes",
+        "city": "La Ravoire",
+        "status": "discharged",
+        "doctor_assigned": true
+    },
+    {
+        "p_id": "6C13JD7VK17",
+        "p_name": "Jackie Stodhart",
+        "p_age": 73,
+        "doj": "2023-12-14 06:18:07",
+        "bedtype": "semi-private",
+        "address": "0521 Schurz Road",
+        "state": "Arizona",
+        "city": "Tagapul-an",
+        "status": "active",
+        "doctor_assigned": true
+    }
+]

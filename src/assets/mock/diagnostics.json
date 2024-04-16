@@ -1,0 +1,52 @@
+[
+    {
+        "d_id": 1,
+        "d_name": "CBC",
+        "d_cost": 200
+    },
+    {
+        "d_id": 2,
+        "d_name": "Urinalysis",
+        "d_cost": 155
+    },
+    {
+        "d_id": 3,
+        "d_name": "Lipid Panel",
+        "d_cost": 200
+    },
+    {
+        "d_id": 4,
+        "d_name": "LFT",
+        "d_cost": 160
+    },
+    {
+        "d_id": 5,
+        "d_name": "ECG",
+        "d_cost": 60
+    },
+    {
+        "d_id": 6,
+        "d_name": "TFT",
+        "d_cost": 120
+    },
+    {
+        "d_id": 7,
+        "d_name": "Prothrombin Time",
+        "d_cost": 200
+    },
+    {
+        "d_id": 8,
+        "d_name": "Rheumatoid Factor",
+        "d_cost": 40
+    },
+    {
+        "d_id": 9,
+        "d_name": "Spirometry",
+        "d_cost": 100
+    },
+    {
+        "d_id": 10,
+        "d_name": "Antibody Test",
+        "d_cost": 55
+    }
+]
