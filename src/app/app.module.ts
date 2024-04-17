@@ -19,6 +19,7 @@ import { PatientMedicineFormComponent } from './components/patients/patient-medi
 import { DiagnosticComponent } from './components/diagnostics/diagnostic/diagnostic.component';
 import { PatientDiagnosticFormComponent } from './components/patients/patient-diagnostic-form/patient-diagnostic-form.component';
 import { BillPaymentFormComponent } from './components/billing/bill-payment-form/bill-payment-form.component';
+import { DiagnosticFormComponent } from './components/diagnostics/diagnostic-form/diagnostic-form.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { BillPaymentFormComponent } from './components/billing/bill-payment-form
     PatientMedicineFormComponent,
     DiagnosticComponent,
     PatientDiagnosticFormComponent,
-    BillPaymentFormComponent
+    BillPaymentFormComponent,
+    DiagnosticFormComponent
   ],
   imports: [
     BrowserModule,

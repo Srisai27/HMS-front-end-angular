@@ -88,8 +88,8 @@ export class DataService {
   //// Diagnostics
 
   public getDiagnostics(): Observable<any> {
-    // const url = '/assets/mock/diagnostics.json';
-    const url = `${HOST}/${ROOT}/get_diagnostics`;
+    const url = '/assets/mock/diagnostics.json';
+    // const url = `${HOST}/${ROOT}/get_diagnostics`;
     return this.http.get(url);
 
   }
@@ -97,5 +97,22 @@ export class DataService {
   public issueDiagnostics(payload: any): Observable<any> {
     const url = `${HOST}/${ROOT}/issue_diagnostic`;
     return this.http.post(url, payload);
+  }
+
+  public addDiagnostic(diagnostic: any): Observable<any> {
+    const url = `${HOST}/${ROOT}/add_diagnostic`;
+    return this.http.post(url, diagnostic);
+
+  }
+
+  public updateDiagnostic(diagnostic: any): Observable<any> {
+    const url = `${HOST}/${ROOT}/update_diagnostic`;
+    return this.http.put(url, diagnostic);
+
+  }
+
+  public deleteDiagnostic(id: string): Observable<any> {
+    const url = `${HOST}/${ROOT}/delete_diagnostics/${id}`;
+    return this.http.delete(url);
   }
 }
