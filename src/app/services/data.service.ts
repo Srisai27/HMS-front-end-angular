@@ -12,15 +12,16 @@ export class DataService {
   constructor(private http: HttpClient) { }
 
   public getBedtypes(): Observable<any> {
-    const url = `${HOST}/${ROOT}/get_room_type`;
+    const url = '/assets/mock/roomtypes.json';
+    // const url = `${HOST}/${ROOT}/get_room_type`;
     return this.http.get(url);
   }
 
   // Doctors
 
   public getDoctors(): Observable<any> {
-    // const url = '/assets/mock/doctors.json';
-    const url = `${HOST}/${ROOT}/get_doctors`;
+    const url = '/assets/mock/doctors.json';
+    // const url = `${HOST}/${ROOT}/get_doctors`;
     return this.http.get(url);
   }
 
@@ -40,16 +41,16 @@ export class DataService {
   }
 
   public getDoctorDetails(id: string): Observable<any> {
-    // const url = '/assets/mock/doctor-details.json';
-    const url = `${HOST}/${ROOT}/get_patients_by_doctor/${id}`;
+    const url = '/assets/mock/doctor-details.json';
+    // const url = `${HOST}/${ROOT}/get_patients_by_doctor/${id}`;
     return this.http.get(url);
   }
 
   //// Patients
 
   public getPatients(): Observable<any> {
-    // const url = '/assets/mock/patients.json';
-    const url = `${HOST}/${ROOT}/get_patient`;
+    const url = '/assets/mock/patients.json';
+    // const url = `${HOST}/${ROOT}/get_patient`;
     return this.http.get(url);
   }
 
@@ -69,8 +70,8 @@ export class DataService {
   }
 
   public getPatientDetails(id: string): Observable<any> {
-    // const url = '/assets/mock/patient-details.json';
-    const url = `${HOST}/${ROOT}/get_all_patient_details/${id}`;
+    const url = '/assets/mock/patient-details.json';
+    // const url = `${HOST}/${ROOT}/get_all_patient_details/${id}`;
     return this.http.get(url);
   }
 
@@ -117,19 +118,20 @@ export class DataService {
   // Billings
 
   public getBillingDetails(p_id: string): Observable<any> {
-    // const url = '/assets/mock/get_bill.json';
-    const url = `${HOST}/${ROOT}/get_bill/${p_id}`;
+    const url = '/assets/mock/get_bill.json';
+    // const url = `${HOST}/${ROOT}/get_bill/${p_id}`;
     return this.http.get(url);
   }
 
   public calculateBill(p_id: string): Observable<any> {
-    // const url = '/assets/mock/calculate_bill.json';
-    const url = `${HOST}/${ROOT}/calculate_bill/${p_id}`;
+    const url = '/assets/mock/calculate_bill.json';
+    // const url = `${HOST}/${ROOT}/calculate_bill/${p_id}`;
     return this.http.get(url);
   }
 
   public makePayment(p_id: string): Observable<any> {
-    const url = `${HOST}/${ROOT}/make_payment/${p_id}`;
+    const url = '/assets/mock/calculate_bill.json';
+    // const url = `${HOST}/${ROOT}/make_payment/${p_id}`;
     return this.http.post(url, {});
   }
 }
