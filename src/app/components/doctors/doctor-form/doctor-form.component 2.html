@@ -1,42 +1,38 @@
 <div class="offcanvas-header">
-    <h4 class="offcanvas-title ps-2" id="offcanvas-basic-title">{{ patient ? 'Update Patient' : 'Add Patient' }}</h4>
+    <h4 class="offcanvas-title ps-2" id="offcanvas-basic-title">{{ doctor ? 'Update Doctor' : 'Add Doctor' }}</h4>
     <button type="button" class="btn-close" aria-label="Close"
         (click)="activeOffcanvas.dismiss('Cross click')"></button>
 </div>
+
 <div class="offcanvas-body pt-0">
-    <form class="px-2 pb-2 mb-4" [formGroup]="patientForm" (ngSubmit)="addOrUpdatePatient()">
+    <form class="px-2 pb-2 mb-4" [formGroup]="doctorform" (ngSubmit)="addOrUpdateDoctor()">
 
         <div class="mb-3">
             <label class="form-label" for="name">Name</label>
-            <input class="form-control" id="name" type="text" formControlName="p_name">
+            <input class="form-control" id="name" type="text" formControlName="doc_name">
         </div>
         <div class="mb-3">
             <div class="row">
                 <div class="col-4">
                     <label class="form-label" for="age">Age</label>
-                    <input class="form-control" id="age" type="text" formControlName="p_age">
+                    <input class="form-control" id="age" type="text" formControlName="doc_age">
                 </div>
                 <div class="col-8">
-                    <label class="form-label" for="doj">Date of joining</label>
-                    <input class="form-control" id="doj" type="date" formControlName="doj">
+                    <label class="form-label" for="specialization">Specialization</label>
+                    <input class="form-control" id="specialization" type="text" formControlName="specialization">
                 </div>
             </div>
         </div>
         <div class="mb-3">
-            <label class="form-label" for="bedtype">Bedtype</label>
-            <select class="form-select" id=" bedtype" formControlName="bedtype">
-                <option class="text-capitalize" [value]=record.type *ngFor="let record of bedtypes">{{ record?.type }}
-                </option>
-            </select>
-        </div>
-        <div class="mb-3">
             <label class="form-label" for="mobile">Mobile</label>
-            <input class="form-control" id="mobile" type="text" formControlName="p_mobile">
+            <input class="form-control" id="mobile" type="text" formControlName="mobile">
         </div>
         <div class="mb-3">
             <label class="form-label" for="email">Email</label>
-            <input class="form-control" id="email" type="email" formControlName="p_email">
+            <input class="form-control" id="email" type="email" formControlName="email">
         </div>
+
+
         <div class="mb-3">
             <label class="form-label" for="address">Address</label>
             <input class="form-control" id="address" type="text" formControlName="address">
@@ -52,14 +48,6 @@
                     <input class="form-control" id="state" type="text" formControlName="state">
                 </div>
             </div>
-        </div>
-        <div class="mb-3">
-            <label class="form-label" for="doc_id">Doctor</label>
-            <select class="form-select" id="doc_id" formControlName="doc_id">
-                <option class="text-capitalize" [value]=record.doc_id *ngFor="let record of doctors">{{ record?.doc_name
-                    }}
-                </option>
-            </select>
         </div>
         <button type="submit" class="btn btn-green mt-4 text-white">Submit</button>
     </form>

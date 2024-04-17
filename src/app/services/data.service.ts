@@ -2,14 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-const HOST = 'http://192.168.0.205:8000'
-const ROOT = 'gmushs'
+const HOST = 'http://192.168.0.205:8000';
+const ROOT = 'gmushs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DataService {
-
   constructor(private http: HttpClient) { }
 
   public getBedtypes(): Observable<any> {
@@ -17,9 +16,10 @@ export class DataService {
     return this.http.get(url);
   }
 
-  //// Doctors
+  // Doctors
 
   public getDoctors(): Observable<any> {
+    // const url = '/assets/mock/doctors.json';
     const url = `${HOST}/${ROOT}/get_doctors`;
     return this.http.get(url);
   }
@@ -32,15 +32,18 @@ export class DataService {
   public addDoctor(doctor: any): Observable<any> {
     const url = `${HOST}/${ROOT}/add_doctor`;
     return this.http.post(url, doctor);
-
   }
 
   public updateDoctor(doctor: any): Observable<any> {
     const url = `${HOST}/${ROOT}/update_doctor`;
     return this.http.put(url, doctor);
-
   }
 
+  public getDoctorDetails(id: string): Observable<any> {
+    // const url = '/assets/mock/doctor-details.json';
+    const url = `${HOST}/${ROOT}/get_patients_by_doctor/${id}`;
+    return this.http.get(url);
+  }
 
   //// Patients
 
@@ -65,33 +68,30 @@ export class DataService {
     return this.http.delete(url);
   }
 
-  public getPateintDetails(id: string): Observable<any> {
+  public getPatientDetails(id: string): Observable<any> {
+    // const url = '/assets/mock/patient-details.json';
     const url = `${HOST}/${ROOT}/get_all_patient_details/${id}`;
     return this.http.get(url);
-
   }
 
-  ///// Medicines
+  // Medicines
 
   public getMedicines(): Observable<any> {
     const url = `${HOST}/${ROOT}/get_medicines`;
     return this.http.get(url);
-
   }
 
   public issueMedicine(payload: any): Observable<any> {
     const url = `${HOST}/${ROOT}/issue_medicine`;
     return this.http.post(url, payload);
-
   }
 
-  //// Diagnostics
+  // Diagnostics
 
   public getDiagnostics(): Observable<any> {
-    const url = '/assets/mock/diagnostics.json';
-    // const url = `${HOST}/${ROOT}/get_diagnostics`;
+    // const url = '/assets/mock/diagnostics.json';
+    const url = `${HOST}/${ROOT}/get_diagnostics`;
     return this.http.get(url);
-
   }
 
   public issueDiagnostics(payload: any): Observable<any> {
@@ -102,17 +102,34 @@ export class DataService {
   public addDiagnostic(diagnostic: any): Observable<any> {
     const url = `${HOST}/${ROOT}/add_diagnostic`;
     return this.http.post(url, diagnostic);
-
   }
 
   public updateDiagnostic(diagnostic: any): Observable<any> {
     const url = `${HOST}/${ROOT}/update_diagnostic`;
     return this.http.put(url, diagnostic);
-
   }
 
   public deleteDiagnostic(id: string): Observable<any> {
     const url = `${HOST}/${ROOT}/delete_diagnostics/${id}`;
     return this.http.delete(url);
+  }
+
+  // Billings
+
+  public getBillingDetails(p_id: string): Observable<any> {
+    // const url = '/assets/mock/get_bill.json';
+    const url = `${HOST}/${ROOT}/get_bill/${p_id}`;
+    return this.http.get(url);
+  }
+
+  public calculateBill(p_id: string): Observable<any> {
+    // const url = '/assets/mock/calculate_bill.json';
+    const url = `${HOST}/${ROOT}/calculate_bill/${p_id}`;
+    return this.http.get(url);
+  }
+
+  public makePayment(p_id: string): Observable<any> {
+    const url = `${HOST}/${ROOT}/make_payment/${p_id}`;
+    return this.http.post(url, {});
   }
 }

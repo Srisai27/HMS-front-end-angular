@@ -1,0 +1,71 @@
+.patient-card {
+  height: 40rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.patient-card-header {
+  min-height: 8rem;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.patient-card-header::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: 3.5rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: #006633f0;
+  top: 14%;
+  left: 10%;
+}
+
+.patient-card-header::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 14rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: #006633;
+  opacity: 0.3;
+  top: -100%;
+  right: -4%;
+}
+
+.patient-card-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 0rem 1rem;
+}
+
+.patient-card-footer {
+  position: relative;
+  min-height: 8rem;
+  overflow: hidden;
+  z-index: 1;
+  margin-top: auto;
+}
+
+.patient-card-footer::before {
+  content: "";
+  background-color: #006633f0;
+  position: absolute;
+  width: 150%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  left: -25%;
+  z-index: -1;
+}
+
+.patient-card-footer-text {
+  padding: 2rem;
+  text-align: center;
+  color: white;
+}

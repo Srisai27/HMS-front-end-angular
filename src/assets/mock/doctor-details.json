@@ -1,0 +1,27 @@
+{
+  "doctor_info": {
+    "doc_id": "2XN4V44MC74",
+    "doc_name": "Briney McOwen",
+    "doc_age": 33,
+    "specialization": "Briney",
+    "email": "bmcowen1@kickstarter.com",
+    "mobile": "210-850-4882",
+    "address": "93960 Mallard Crossing",
+    "state": "Texas",
+    "city": "San Antonio"
+  },
+  "patient_info": [
+    {
+      "p_name": "Sri Sai Kumar Gaddam",
+      "p_age": "25",
+      "doj": "2024-04-13",
+      "bedtype": "private",
+      "address": "11108 Cavalier Ct, Apt 5B",
+      "city": "Fairfax",
+      "state": "Virginia",
+      "doctor_assigned": true,
+      "p_id": "UKBKBVQ5MEI",
+      "status": "active"
+    }
+  ]
+}

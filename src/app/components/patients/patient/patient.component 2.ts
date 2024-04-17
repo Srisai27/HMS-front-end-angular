@@ -10,9 +10,10 @@ import { BillPaymentFormComponent } from '../../billing/bill-payment-form/bill-p
 @Component({
   selector: 'app-patient',
   templateUrl: './patient.component.html',
-  styleUrls: ['./patient.component.css'],
+  styleUrls: ['./patient.component.css']
 })
 export class PatientComponent {
+
   private offcanvasService = inject(NgbOffcanvas);
   private modalService = inject(NgbModal);
 
@@ -23,63 +24,46 @@ export class PatientComponent {
   }
 
   public getPatients(): void {
-    this.dataService.getPatients().subscribe((data) => {
+    this.dataService.getPatients().subscribe(data => {
       this.patients = data;
     });
   }
 
   public openPatientForm(patient = undefined): void {
-    const offcanvasRef = this.offcanvasService.open(PatientFormComponent, {
-      position: 'end',
-      backdrop: true,
-      panelClass: 'new-patient-form-panel',
-    });
+    const offcanvasRef = this.offcanvasService.open(PatientFormComponent, { position: 'end', backdrop: true, panelClass: 'new-patient-form-panel' });
     offcanvasRef.componentInstance.patient = patient;
 
-    offcanvasRef.closed.subscribe((resp) => {
-      if (resp || resp?.status) {
+    offcanvasRef.closed.subscribe(resp => {
+      if (resp) {
         this.getPatients();
+      }
+      else if (resp?.status) {
+        this.getPatients();
+
       }
     });
   }
 
   public openPatientMedicineForm(patient: any): void {
-    const offcanvasRef = this.offcanvasService.open(
-      PatientMedicineFormComponent,
-      { position: 'end', backdrop: true, panelClass: 'new-patient-form-panel' }
-    );
+    const offcanvasRef = this.offcanvasService.open(PatientMedicineFormComponent, { position: 'end', backdrop: true, panelClass: 'new-patient-form-panel' });
     offcanvasRef.componentInstance.patient = patient;
   }
 
   public openDiagnosisFrom(patient: any): void {
-    const offcanvasRef = this.offcanvasService.open(
-      PatientDiagnosticFormComponent,
-      { position: 'end', backdrop: true, panelClass: 'new-patient-form-panel' }
-    );
+    const offcanvasRef = this.offcanvasService.open(PatientDiagnosticFormComponent, { position: 'end', backdrop: true, panelClass: 'new-patient-form-panel' });
     offcanvasRef.componentInstance.patient = patient;
   }
 
   public openBillPaymentFrom(patient: any): void {
-    const modelRef = this.modalService.open(BillPaymentFormComponent, {
-      centered: true,
-      backdrop: true,
-      modalDialogClass: 'bill-payment-modal',
-      size: 'xl',
-    });
-    modelRef.componentInstance.patient = patient;
-
-    modelRef.closed.subscribe((resp) => {
-      if (resp || resp?.status) {
-        this.getPatients();
-      }
-    });
+    this.modalService.open(BillPaymentFormComponent, { centered: true, backdrop: true, modalDialogClass: 'bill-payment-modal', size: 'xl' });
   }
 
   public deletePatient(id: string): void {
-    this.dataService.deletePatient(id).subscribe((resp) => {
+    this.dataService.deletePatient(id).subscribe(resp => {
       if (resp?.status) {
         this.getPatients();
       }
     });
   }
+
 }

@@ -1,0 +1,63 @@
+{
+  "patient_info": {
+    "p_name": "Sri Sai Kumar Gaddam",
+    "p_age": "25",
+    "doj": "2024-04-13",
+    "bedtype": "private",
+    "address": "11108 Cavalier Ct, Apt 5B",
+    "city": "Fairfax",
+    "state": "Virginia",
+    "doctor_assigned": true,
+    "p_id": "UKBKBVQ5MEI",
+    "status": "active",
+    "p_email": "bmcowen1@kickstarter.com",
+    "p_mobile": "210-850-4882"
+  },
+  "diagnostics_info": [
+    { "d_id": 6, "d_name": "TFT", "date_issued": "2024-04-15" },
+    { "d_id": 7, "d_name": "Prothrombin Time", "date_issued": "2024-04-15" }
+  ],
+  "medicines_info": [
+    {
+      "med_id": 1,
+      "m_name": "Sodium Fluoride",
+      "quantity": 4,
+      "date_issued": "2024-04-15"
+    },
+    {
+      "med_id": 2,
+      "m_name": "Sodium Chloride",
+      "quantity": 5,
+      "date_issued": "2024-04-15"
+    },
+    {
+      "med_id": 4,
+      "m_name": "Glycerin",
+      "quantity": 10,
+      "date_issued": "2024-04-15"
+    },
+    {
+      "med_id": 4,
+      "m_name": "Glycerin",
+      "quantity": 4,
+      "date_issued": "2024-04-15"
+    },
+    {
+      "med_id": 6,
+      "m_name": "Amitriptyline Hydrochloride",
+      "quantity": 5,
+      "date_issued": "2024-04-15"
+    }
+  ],
+  "doctor_info": {
+    "doc_id": "2XN4V44MC74",
+    "doc_name": "Briney McOwen",
+    "doc_age": 33,
+    "specialization": "Briney",
+    "email": "bmcowen1@kickstarter.com",
+    "mobile": "210-850-4882",
+    "address": "93960 Mallard Crossing",
+    "state": "Texas",
+    "city": "San Antonio"
+  }
+}

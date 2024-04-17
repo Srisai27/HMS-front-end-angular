@@ -1,19 +1,54 @@
-import { Component } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-bill-payment-form',
   templateUrl: './bill-payment-form.component.html',
-  styleUrls: ['./bill-payment-form.component.css']
+  styleUrls: ['./bill-payment-form.component.css'],
 })
 export class BillPaymentFormComponent {
+  _patient: any;
+  get patient(): any {
+    return this._patient;
+  }
+  @Input('patient') set patient(value: any) {
+    this._patient = value;
+    this.calculateBill(this.patient?.p_id);
+  }
+
+  activeModal = inject(NgbActiveModal);
 
   selectedCardProvider: string = '';
   loading = true;
 
-  constructor() {
-    setTimeout(() => {
+  billDetails: any = undefined;
+
+  constructor(private dataService: DataService) {}
+
+  public calculateBill(id: any): void {
+    this.dataService.calculateBill(id).subscribe((data) => {
+      if (data.status) {
+        setTimeout(() => {
+          this.getBill(id);
+        }, 3000);
+      }
+    });
+  }
+
+  public getBill(id: any): void {
+    this.dataService.getBillingDetails(id).subscribe((data) => {
       this.loading = false;
-    }, 5000)
+      this.billDetails = data;
+    });
+  }
+
+  public makePayment(): any {
+    this.dataService.makePayment(this.patient?.p_id).subscribe((data) => {
+      if (data?.status) {
+        this.activeModal.close(data);
+      }
+    });
   }
 
   public selectCardProvider(e: any): void {

@@ -19,8 +19,9 @@ import { PatientMedicineFormComponent } from './components/patients/patient-medi
 import { DiagnosticComponent } from './components/diagnostics/diagnostic/diagnostic.component';
 import { PatientDiagnosticFormComponent } from './components/patients/patient-diagnostic-form/patient-diagnostic-form.component';
 import { BillPaymentFormComponent } from './components/billing/bill-payment-form/bill-payment-form.component';
+import { PatientCardComponent } from './components/patients/patient-card/patient-card.component';
 import { DiagnosticFormComponent } from './components/diagnostics/diagnostic-form/diagnostic-form.component';
-
+import { DoctorCardComponent } from './components/doctors/doctor-card/doctor-card.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,9 @@ import { DiagnosticFormComponent } from './components/diagnostics/diagnostic-for
     DiagnosticComponent,
     PatientDiagnosticFormComponent,
     BillPaymentFormComponent,
-    DiagnosticFormComponent
+    PatientCardComponent,
+    DiagnosticFormComponent,
+    DoctorCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,12 +54,12 @@ import { DiagnosticFormComponent } from './components/diagnostics/diagnostic-for
       domain: 'dev-z3mtxllsye2binve.us.auth0.com',
       clientId: '2tBvcH6Oe8KMJEXnsvvig17VUtauM4HU',
       authorizationParams: {
-        redirect_uri: window.location.origin
-      }
+        redirect_uri: window.location.origin,
+      },
     }),
     NgbModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

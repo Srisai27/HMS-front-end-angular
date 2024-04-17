@@ -1,0 +1,83 @@
+.doctor-card {
+  height: 36rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.doctor-card-header {
+  min-height: 8rem;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.doctor-card-header::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: 3.5rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: #006633f0;
+  top: 14%;
+  left: 10%;
+}
+
+.doctor-card-header::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 14rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: #006633;
+  opacity: 0.3;
+  top: -100%;
+  right: -4%;
+}
+
+.doctor-card-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 0rem 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.doctor-card-content::before {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512'%3E%3C!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--%3E%3Cpath d='M142.4 21.9c5.6 16.8-3.5 34.9-20.2 40.5L96 71.1V192c0 53 43 96 96 96s96-43 96-96V71.1l-26.1-8.7c-16.8-5.6-25.8-23.7-20.2-40.5s23.7-25.8 40.5-20.2l26.1 8.7C334.4 19.1 352 43.5 352 71.1V192c0 77.2-54.6 141.6-127.3 156.7C231 404.6 278.4 448 336 448c61.9 0 112-50.1 112-112V265.3c-28.3-12.3-48-40.5-48-73.3c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V336c0 97.2-78.8 176-176 176c-92.9 0-168.9-71.9-175.5-163.1C87.2 334.2 32 269.6 32 192V71.1c0-27.5 17.6-52 43.8-60.7l26.1-8.7c16.8-5.6 34.9 3.5 40.5 20.2zM480 224a32 32 0 1 0 0-64 32 32 0 1 0 0 64z'/%3E%3C/svg%3E");
+  position: absolute;
+  z-index: -1;
+  width: 100px;
+  opacity: 0.15;
+  top: -7px;
+  right: 0;
+}
+
+.doctor-card-footer {
+  position: relative;
+  min-height: 8rem;
+  overflow: hidden;
+  z-index: 1;
+  margin-top: auto;
+}
+
+.doctor-card-footer::before {
+  content: "";
+  background-color: #006633f0;
+  position: absolute;
+  width: 150%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  left: -25%;
+  z-index: -1;
+}
+
+.doctor-card-footer-text {
+  padding: 2rem;
+  text-align: center;
+  color: white;
+}

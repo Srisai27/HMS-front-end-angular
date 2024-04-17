@@ -1,0 +1,22 @@
+<div class="offcanvas-header">
+    <h4 class="offcanvas-title ps-2" id="offcanvas-basic-title">{{ diagnostic ? 'Update Diagnostic' : 'Add Diagnostic'
+        }}</h4>
+    <button type="button" class="btn-close" aria-label="Close"
+        (click)="activeOffcanvas.dismiss('Cross click')"></button>
+</div>
+
+<div class="offcanvas-body pt-0">
+    <form class="px-2 pb-2 mb-4" [formGroup]="diagnosticform" (ngSubmit)="addOrUpdateDiagnostic()">
+
+        <div class="mb-3">
+            <label class="form-label" for="name">Name</label>
+            <input class="form-control" id="name" type="text" formControlName="d_name">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label" for="cost">Cost</label>
+            <input class="form-control" id="cost" type="text" formControlName="d_cost">
+        </div>
+        <button type="submit" class="btn btn-green mt-4 text-white">Submit</button>
+    </form>
+</div>

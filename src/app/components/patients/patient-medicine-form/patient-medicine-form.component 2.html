@@ -1,0 +1,60 @@
+<div class="offcanvas-header">
+    <h4 class="offcanvas-title ps-2" id="offcanvas-basic-title">Issue Medicines</h4>
+    <button type="button" class="btn-close" aria-label="Close"
+        (click)="activeOffcanvas.dismiss('Cross click')"></button>
+</div>
+<div class="offcanvas-body pt-0">
+    <ng-template #rt let-r="result" let-t="term">
+        <ngb-highlight [result]="r.med_name" [term]="t"></ngb-highlight>
+    </ng-template>
+
+    <div class="mb-3 px-2">
+        <label for="typeahead-template" class="form-label">Search for a medicine:</label>
+        <input #searchinput id="typeahead-template" type="text" class="form-control" [value]="searchText"
+            (focus)="focus$.next($any($event).target.value)" (click)="click$.next($any($event).target.value)"
+            (selectItem)="select($event)" [ngbTypeahead]="search" [resultTemplate]="rt" [inputFormatter]="formatter" />
+    </div>
+
+    <form class="px-2 pb-2 mb-4" [formGroup]="selectedMedicinesForm" (ngSubmit)="issueMedicines()">
+        <div formArrayName="medicines">
+            <table class="table table-striped" *ngIf="selectedMedicinesArray?.value.length">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Prescribed</th>
+                        <th scope="col">Available</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let x of selectedMedicinesArray.controls; let i = index;" [formGroupName]="i">
+                        <th class="align-middle" scope="row">{{ i+1 }}</th>
+                        <td class="align-middle">
+                            {{ selectedMedicinesArray.at(i).get('med_name')?.value }}
+                        </td>
+                        <td class="align-middle">
+                            <input class="form-control" min="1"
+                                [max]="getMax(selectedMedicinesArray.at(i).get('med_id')?.value)" type="number"
+                                formControlName="req_quantity" (input)="updateQuantity($event, i)" />
+                        </td>
+                        <td class="align-middle">
+                            {{ selectedMedicinesArray.at(i).get('available')?.value }}
+                        </td>
+                        <td>
+                            <button class="btn" (click)="deleteItem(i)">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-trash3 text-danger" viewBox="0 0 16 16">
+                                    <path
+                                        d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5" />
+                                </svg>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <button *ngIf="selectedMedicinesArray?.value.length" class="btn btn-green text-white"
+            type="submit">Submit</button>
+    </form>
+</div>
