@@ -1,0 +1,68 @@
+[
+    {
+        "med_id": 1,
+        "med_name": "Sodium Fluoride",
+        "quantity": 193,
+        "price": 24
+    },
+    {
+        "med_id": 2,
+        "med_name": "Sodium Chloride",
+        "quantity": 240,
+        "price": 14
+    },
+    {
+        "med_id": 3,
+        "med_name": "Antipyrine and Benzocaine",
+        "quantity": 433,
+        "price": 14
+    },
+    {
+        "med_id": 4,
+        "med_name": "Glycerin",
+        "quantity": 378,
+        "price": 11
+    },
+    {
+        "med_id": 5,
+        "med_name": "POTASSIUM CHLORIDE",
+        "quantity": 222,
+        "price": 20
+    },
+    {
+        "med_id": 6,
+        "med_name": "Amitriptyline Hydrochloride",
+        "quantity": 420,
+        "price": 7
+    },
+    {
+        "med_id": 7,
+        "med_name": "Mometasone Furoate",
+        "quantity": 467,
+        "price": 19
+    },
+    {
+        "med_id": 8,
+        "med_name": "TRETINOIN",
+        "quantity": 175,
+        "price": 24
+    },
+    {
+        "med_id": 9,
+        "med_name": "ETHYL ALCOHOL",
+        "quantity": 187,
+        "price": 20
+    },
+    {
+        "med_id": 10,
+        "med_name": "Glipizide",
+        "quantity": 355,
+        "price": 23
+    },
+    {
+        "med_name": "Dolo 650",
+        "quantity": 214,
+        "price": 24,
+        "med_id": 11
+    }
+]

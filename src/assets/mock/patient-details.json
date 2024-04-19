@@ -14,8 +14,16 @@
     "p_mobile": "210-850-4882"
   },
   "diagnostics_info": [
-    { "d_id": 6, "d_name": "TFT", "date_issued": "2024-04-15" },
-    { "d_id": 7, "d_name": "Prothrombin Time", "date_issued": "2024-04-15" }
+    {
+      "d_id": 6,
+      "d_name": "TFT",
+      "date_issued": "2024-04-15"
+    },
+    {
+      "d_id": 7,
+      "d_name": "Prothrombin Time",
+      "date_issued": "2024-04-15"
+    }
   ],
   "medicines_info": [
     {
@@ -53,7 +61,7 @@
     "doc_id": "2XN4V44MC74",
     "doc_name": "Briney McOwen",
     "doc_age": 33,
-    "specialization": "Briney",
+    "specialization": "Orthopedics",
     "email": "bmcowen1@kickstarter.com",
     "mobile": "210-850-4882",
     "address": "93960 Mallard Crossing",

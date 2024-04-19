@@ -78,7 +78,9 @@ export class DataService {
   // Medicines
 
   public getMedicines(): Observable<any> {
-    const url = `${HOST}/${ROOT}/get_medicines`;
+    const url = '/assets/mock/medicines.json';
+
+    // const url = `${HOST}/${ROOT}/get_medicines`;
     return this.http.get(url);
   }
 
@@ -90,8 +92,8 @@ export class DataService {
   // Diagnostics
 
   public getDiagnostics(): Observable<any> {
-    // const url = '/assets/mock/diagnostics.json';
-    const url = `${HOST}/${ROOT}/get_diagnostics`;
+    const url = '/assets/mock/diagnostics.json';
+    // const url = `${HOST}/${ROOT}/get_diagnostics`;
     return this.http.get(url);
   }
 

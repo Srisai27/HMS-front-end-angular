@@ -1,27 +1,112 @@
-{
-  "doctor_info": {
-    "doc_id": "2XN4V44MC74",
-    "doc_name": "Briney McOwen",
-    "doc_age": 33,
-    "specialization": "Briney",
-    "email": "bmcowen1@kickstarter.com",
-    "mobile": "210-850-4882",
-    "address": "93960 Mallard Crossing",
-    "state": "Texas",
-    "city": "San Antonio"
+[
+  {
+    "doc_name": "Nathaniel Banks",
+    "doc_age": "38",
+    "specialization": "Pediatrics",
+    "email": "nbanks1@gmu.com",
+    "mobile": "234-567-8901",
+    "address": "123 Oak Street",
+    "state": "California",
+    "city": "Los Angeles",
+    "doc_id": "9V3L0SIZAHG"
   },
-  "patient_info": [
-    {
-      "p_name": "Sri Sai Kumar Gaddam",
-      "p_age": "25",
-      "doj": "2024-04-13",
-      "bedtype": "private",
-      "address": "11108 Cavalier Ct, Apt 5B",
-      "city": "Fairfax",
-      "state": "Virginia",
-      "doctor_assigned": true,
-      "p_id": "UKBKBVQ5MEI",
-      "status": "active"
-    }
-  ]
-}
+  {
+    "doc_name": "Amanda Chen",
+    "doc_age": "51",
+    "specialization": "Dermatology",
+    "email": "achen2@gmail.com",
+    "mobile": "456-789-1234",
+    "address": "456 Maple Avenue",
+    "state": "New York",
+    "city": "New York City",
+    "doc_id": "KY3JM9AH5UK"
+  },
+  {
+    "doc_name": "Jonathan Cruz",
+    "doc_age": "33",
+    "specialization": "Cardiology",
+    "email": "jcruz3@medcenter.com",
+    "mobile": "789-123-4567",
+    "address": "789 Pine Street",
+    "state": "Texas",
+    "city": "Houston",
+    "doc_id": "2NPVHE0NQTW"
+  },
+  {
+    "doc_name": "Samantha Patel",
+    "doc_age": "47",
+    "specialization": "Obstetrics",
+    "email": "spatel4@hsp.org",
+    "mobile": "321-654-9876",
+    "address": "987 Elm Avenue",
+    "state": "Florida",
+    "city": "Miami",
+    "doc_id": "1DKYY2S24Y5"
+  },
+  {
+    "doc_name": "Robert Thompson",
+    "doc_age": "42",
+    "specialization": "Orthopedics",
+    "email": "rthompson5@yahoo.com",
+    "mobile": "987-654-3210",
+    "address": "654 Cedar Street",
+    "state": "Illinois",
+    "city": "Chicago",
+    "doc_id": "7L0I9YBRJ58"
+  },
+  {
+    "doc_name": "Maria Rodriguez",
+    "doc_age": "49",
+    "specialization": "Family Medicine",
+    "email": "mrodriguez6@hospital.com",
+    "mobile": "876-543-2109",
+    "address": "321 Birch Avenue",
+    "state": "Arizona",
+    "city": "Phoenix",
+    "doc_id": "OSL0TWN1SSD"
+  },
+  {
+    "doc_name": "Kevin Lee",
+    "doc_age": "36",
+    "specialization": "Neurology",
+    "email": "klee7@gmu.net",
+    "mobile": "543-210-9876",
+    "address": "147 Willow Street",
+    "state": "Washington",
+    "city": "Seattle",
+    "doc_id": "C8CBSIIUXIN"
+  },
+  {
+    "doc_name": "Jennifer White",
+    "doc_age": "45",
+    "specialization": "Psychiatry",
+    "email": "jwhite8@medcenter.org",
+    "mobile": "210-987-6543",
+    "address": "258 Magnolia Avenue",
+    "state": "Massachusetts",
+    "city": "Boston",
+    "doc_id": "D1F1AM5EZ2F"
+  },
+  {
+    "doc_name": "David Baker",
+    "doc_age": "40",
+    "specialization": "Ophthalmology",
+    "email": "dbaker9@outlook.com",
+    "mobile": "654-321-0987",
+    "address": "369 Walnut Street",
+    "state": "Colorado",
+    "city": "Denver",
+    "doc_id": "NMFNOTEOY3P"
+  },
+  {
+    "doc_name": "Michelle Scott",
+    "doc_age": "48",
+    "specialization": "Internal Medicine",
+    "email": "mscott10@clinic.net",
+    "mobile": "543-789-0123",
+    "address": "753 Chestnut Avenue",
+    "state": "Ohio",
+    "city": "Columbus",
+    "doc_id": "DAIN92GMANK"
+  }
+]
