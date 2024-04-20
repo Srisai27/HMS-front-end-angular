@@ -29,6 +29,7 @@ import { PatientCardComponent } from './components/patients/patient-card/patient
 import { DiagnosticFormComponent } from './components/diagnostics/diagnostic-form/diagnostic-form.component';
 import { DoctorCardComponent } from './components/doctors/doctor-card/doctor-card.component';
 import { ToastsContainerComponent } from './components/toasts/toasts-container/toasts-container.component';
+import { MedicineFormComponent } from './components/medicines/medicine-form/medicine-form.component';
 
 FusionChartsModule.fcRoot(FusionCharts, Charts, FusionTheme);
 

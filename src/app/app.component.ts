@@ -12,11 +12,11 @@ export class AppComponent {
     public auth: AuthService,
     private router: Router
   ) {
-    this.auth.isAuthenticated$.subscribe(isauth => {
-      if (isauth) {
-        this.router.navigateByUrl('/home');
-      }
-    })
+    // this.auth.isAuthenticated$.subscribe(isauth => {
+    //   if (isauth) {
+    //     this.router.navigateByUrl('/home');
+    //   }
+    // })
   }
   title = 'Hospital-Management-System';
 }

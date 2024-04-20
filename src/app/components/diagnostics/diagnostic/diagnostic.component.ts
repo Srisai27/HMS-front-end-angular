@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
 import { DataService } from 'src/app/services/data.service';
 import { DiagnosticFormComponent } from '../diagnostic-form/diagnostic-form.component';
+import { ToastService } from 'src/app/services/toast.service';
 
 @Component({
   selector: 'app-diagnostic',
@@ -11,6 +12,7 @@ import { DiagnosticFormComponent } from '../diagnostic-form/diagnostic-form.comp
 })
 export class DiagnosticComponent {
   diagnostics: any = [];
+  private toastService = inject(ToastService);
   private offcanvasService = inject(NgbOffcanvas);
 
 
@@ -34,11 +36,17 @@ export class DiagnosticComponent {
       this.diagnostics = data;
     })
   }
+  private showConfirmation(message: string): void {
+    this.toastService.show({ message });
+  }
 
 
-  public deleteDiagnostic(d_id: string): void {
+  public deleteDiagnostic(d_id: string, name: string): void {
     this.dataservice.deleteDiagnostic(d_id).subscribe(response => {
       if (response?.status) {
+        this.showConfirmation(
+          `Diagnostic deleted successfully - ${name} `
+        );
         this.getDiagnostics();
       }
 

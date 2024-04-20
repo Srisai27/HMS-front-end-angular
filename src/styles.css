@@ -197,61 +197,12 @@ ul.navbar-nav::before {
   color: #000;
 }
 
-.footer {
-  padding: 2rem;
-  background-color: #222222;
-  color: white;
 
-  background-image: url(https://www.gmu.edu/themes/custom/sf_mason_basic/images/audience-menu-mason-m.png);
-  background-size: 46.87rem;
-  background-repeat: no-repeat;
-  background-position: 98% 50%;
-  margin-top: 2.7rem;
-}
 
-.footer hr {
-  border-top: 2px solid white;
-}
 
-ul.footer-links {
-  list-style-type: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* gap: 3rem; */
-  padding-top: 1rem;
-}
-
-.footer-information {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding-block: 4rem 2rem;
-}
 
 .footer-logo {
   position: relative;
-}
-
-.footer-logo::after {
-  content: "";
-  position: absolute;
-  width: 1px;
-  height: 66px;
-  background: white;
-  bottom: 15px;
-}
-
-.footer-contact-details {
-  text-align: end;
-}
-
-.footer-link {
-  padding-inline: 2rem;
-}
-
-.footer-link:not(:last-child) {
-  border-right: 1px solid white;
 }
 
 .bg-whitesmk {

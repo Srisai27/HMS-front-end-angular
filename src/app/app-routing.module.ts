@@ -9,6 +9,7 @@ import { MedicineComponent } from './components/medicines/medicine/medicine.comp
 import { DiagnosticComponent } from './components/diagnostics/diagnostic/diagnostic.component';
 
 const routes: Routes = [
+  { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'patient', component: PatientComponent },
   { path: 'patient/:id', component: PatientDetailsComponent },

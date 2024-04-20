@@ -2,6 +2,7 @@ import { Component, Input, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NgbActiveOffcanvas } from '@ng-bootstrap/ng-bootstrap';
 import { DataService } from 'src/app/services/data.service';
+import { ToastService } from 'src/app/services/toast.service';
 
 @Component({
   selector: 'app-diagnostic-form',
@@ -14,6 +15,8 @@ export class DiagnosticFormComponent {
     this.buildDiagnosticForm();
 
   }
+  private toastService = inject(ToastService);
+
 
   activeOffcanvas = inject(NgbActiveOffcanvas);
   _diagnostic: any;
@@ -32,7 +35,9 @@ export class DiagnosticFormComponent {
       d_cost: [diagnostic?.d_cost || '', [Validators.required]]
     })
   }
-
+  private showConfirmation(message: string): void {
+    this.toastService.show({ message });
+  }
   public addOrUpdateDiagnostic(): void {
     if (this.diagnosticform.invalid) {
       return;
@@ -40,6 +45,9 @@ export class DiagnosticFormComponent {
     if (this.diagnostic) {
       this.dataservice.updateDiagnostic({ ...this.diagnosticform.value, d_id: this.diagnostic.d_id }).subscribe(response => {
         if (response && response?.status) {
+          this.showConfirmation(
+            `Diagnostic is successfully updated - ${this.diagnostic.d_name}`
+          );
           this.activeOffcanvas.close(response?.status);
         }
       })
@@ -48,6 +56,9 @@ export class DiagnosticFormComponent {
     else {
       this.dataservice.addDiagnostic(this.diagnosticform.value).subscribe(response => {
         if (response && response?.status) {
+          this.showConfirmation(
+            `Diagnostic is successfully added - ${this.diagnosticform.value.d_name}`
+          );
           this.activeOffcanvas.close(response?.status);
         }
       })

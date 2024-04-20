@@ -88,6 +88,21 @@ export class DataService {
     return this.http.post(url, payload);
   }
 
+  public updateMedicine(payload: any): Observable<any> {
+    const url = `${HOST}/${ROOT}/update_medicine`;
+    return this.http.put(url, payload);
+  }
+
+  public addMedicine(payload: any): Observable<any> {
+    const url = `${HOST}/${ROOT}/add_medicine`;
+    return this.http.post(url, payload);
+  }
+
+  public deleteMedicine(id: string): Observable<any> {
+    const url = `${HOST}/${ROOT}/delete_medicine/${id}`;
+    return this.http.delete(url);
+  }
+
   // Diagnostics
 
   public getDiagnostics(): Observable<any> {
@@ -112,7 +127,7 @@ export class DataService {
   }
 
   public deleteDiagnostic(id: string): Observable<any> {
-    const url = `${HOST}/${ROOT}/delete_diagnostics/${id}`;
+    const url = `${HOST}/${ROOT}/delete_diagnostic/${id}`;
     return this.http.delete(url);
   }
 
