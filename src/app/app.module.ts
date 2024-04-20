@@ -53,6 +53,7 @@ FusionChartsModule.fcRoot(FusionCharts, Charts, FusionTheme);
     DiagnosticFormComponent,
     DoctorCardComponent,
     ToastsContainerComponent,
+    MedicineFormComponent,
   ],
   imports: [
     BrowserModule,
