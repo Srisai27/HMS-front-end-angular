@@ -108,7 +108,7 @@ ul.navbar-nav::before {
 
 .page-title-cont {
   background-color: #eff0e7;
-  padding: 2rem 0;
+  padding: 1rem;
   font-weight: 900;
 }
 
@@ -358,4 +358,13 @@ app-student-survey {
 .bill-payment-modal .modal-content {
   background-color: transparent;
   border: none;
+}
+
+.offcanvas-header {
+  height: 68px !important;
+}
+
+.offcanvas-body {
+  height: calc(100vh - 68px) !important;
+  overflow: auto;
 }

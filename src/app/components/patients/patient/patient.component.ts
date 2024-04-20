@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, TemplateRef, inject } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 import { NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -6,6 +6,7 @@ import { PatientFormComponent } from '../patient-form/patient-form.component';
 import { PatientMedicineFormComponent } from '../patient-medicine-form/patient-medicine-form.component';
 import { PatientDiagnosticFormComponent } from '../patient-diagnostic-form/patient-diagnostic-form.component';
 import { BillPaymentFormComponent } from '../../billing/bill-payment-form/bill-payment-form.component';
+import { ToastService } from 'src/app/services/toast.service';
 
 @Component({
   selector: 'app-patient',
@@ -15,6 +16,7 @@ import { BillPaymentFormComponent } from '../../billing/bill-payment-form/bill-p
 export class PatientComponent {
   private offcanvasService = inject(NgbOffcanvas);
   private modalService = inject(NgbModal);
+  private toastService = inject(ToastService);
 
   public patients: any = [];
 
@@ -28,7 +30,7 @@ export class PatientComponent {
     });
   }
 
-  public openPatientForm(patient = undefined): void {
+  public openPatientForm(patient: any = undefined): void {
     const offcanvasRef = this.offcanvasService.open(PatientFormComponent, {
       position: 'end',
       backdrop: true,
@@ -38,6 +40,11 @@ export class PatientComponent {
 
     offcanvasRef.closed.subscribe((resp) => {
       if (resp || resp?.status) {
+        this.showConfirmation(
+          patient
+            ? `${patient?.p_name} is Updated Succesfully`
+            : 'Patient Successfully Added'
+        );
         this.getPatients();
       }
     });
@@ -49,6 +56,14 @@ export class PatientComponent {
       { position: 'end', backdrop: true, panelClass: 'new-patient-form-panel' }
     );
     offcanvasRef.componentInstance.patient = patient;
+
+    offcanvasRef.closed.subscribe((resp) => {
+      if (resp || resp?.status) {
+        this.showConfirmation(
+          `Medicines are successfully prescribed to ${patient.p_name}`
+        );
+      }
+    });
   }
 
   public openDiagnosisFrom(patient: any): void {
@@ -57,6 +72,14 @@ export class PatientComponent {
       { position: 'end', backdrop: true, panelClass: 'new-patient-form-panel' }
     );
     offcanvasRef.componentInstance.patient = patient;
+
+    offcanvasRef.closed.subscribe((resp) => {
+      if (resp || resp?.status) {
+        this.showConfirmation(
+          `Diagnostics are successfully prescribed to ${patient.p_name}`
+        );
+      }
+    });
   }
 
   public openBillPaymentFrom(patient: any): void {
@@ -70,6 +93,7 @@ export class PatientComponent {
 
     modelRef.closed.subscribe((resp) => {
       if (resp || resp?.status) {
+        this.showConfirmation(`Payment is successfully completed`);
         this.getPatients();
       }
     });
@@ -78,8 +102,13 @@ export class PatientComponent {
   public deletePatient(id: string): void {
     this.dataService.deletePatient(id).subscribe((resp) => {
       if (resp?.status) {
+        this.showConfirmation(`Patient is successfully deleted`);
         this.getPatients();
       }
     });
+  }
+
+  private showConfirmation(message: string): void {
+    this.toastService.show({ message });
   }
 }

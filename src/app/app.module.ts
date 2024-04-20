@@ -1,6 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
+
+import { FusionChartsModule } from 'angular-fusioncharts';
+import * as FusionCharts from 'fusioncharts';
+import * as Charts from 'fusioncharts/fusioncharts.charts';
+import * as FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AuthModule } from '@auth0/auth0-angular';
@@ -22,6 +28,9 @@ import { BillPaymentFormComponent } from './components/billing/bill-payment-form
 import { PatientCardComponent } from './components/patients/patient-card/patient-card.component';
 import { DiagnosticFormComponent } from './components/diagnostics/diagnostic-form/diagnostic-form.component';
 import { DoctorCardComponent } from './components/doctors/doctor-card/doctor-card.component';
+import { ToastsContainerComponent } from './components/toasts/toasts-container/toasts-container.component';
+
+FusionChartsModule.fcRoot(FusionCharts, Charts, FusionTheme);
 
 @NgModule({
   declarations: [
@@ -42,10 +51,12 @@ import { DoctorCardComponent } from './components/doctors/doctor-card/doctor-car
     PatientCardComponent,
     DiagnosticFormComponent,
     DoctorCardComponent,
+    ToastsContainerComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FusionChartsModule,
     HttpClientModule,
     NgbModule,
     FormsModule,

@@ -1,8 +1,8 @@
 <app-header></app-header>
 
-<ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
-  <router-outlet></router-outlet>
-</ng-container>
+<!-- <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut"> -->
+<router-outlet></router-outlet>
+<!-- </ng-container> -->
 
 <ng-template #loggedOut>
   <div class="items-center my-40">
@@ -12,3 +12,5 @@
       Login</button>
   </div>
 </ng-template>
+
+<app-toasts-container aria-live="polite" aria-atomic="true"></app-toasts-container>

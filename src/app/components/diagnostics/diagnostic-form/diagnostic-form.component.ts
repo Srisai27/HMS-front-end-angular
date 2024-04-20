@@ -38,7 +38,7 @@ export class DiagnosticFormComponent {
       return;
     }
     if (this.diagnostic) {
-      this.dataservice.addDiagnostic({ ...this.diagnosticform.value, d_id: this.diagnostic.d_id }).subscribe(response => {
+      this.dataservice.updateDiagnostic({ ...this.diagnosticform.value, d_id: this.diagnostic.d_id }).subscribe(response => {
         if (response && response?.status) {
           this.activeOffcanvas.close(response?.status);
         }
@@ -46,7 +46,7 @@ export class DiagnosticFormComponent {
 
     }
     else {
-      this.dataservice.updateDiagnostic(this.diagnosticform.value).subscribe(response => {
+      this.dataservice.addDiagnostic(this.diagnosticform.value).subscribe(response => {
         if (response && response?.status) {
           this.activeOffcanvas.close(response?.status);
         }

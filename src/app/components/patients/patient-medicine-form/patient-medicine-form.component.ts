@@ -1,17 +1,37 @@
 import { formatDate } from '@angular/common';
 import { Component, Input, ViewChild, inject } from '@angular/core';
-import { AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { NgbActiveOffcanvas, NgbTypeahead, NgbTypeaheadSelectItemEvent } from '@ng-bootstrap/ng-bootstrap';
-import { OperatorFunction, Observable, debounceTime, map, Subject, distinctUntilChanged, filter, merge, takeUntil } from 'rxjs';
+import {
+  AbstractControl,
+  FormArray,
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
+import {
+  NgbActiveOffcanvas,
+  NgbTypeahead,
+  NgbTypeaheadSelectItemEvent,
+} from '@ng-bootstrap/ng-bootstrap';
+import {
+  OperatorFunction,
+  Observable,
+  debounceTime,
+  map,
+  Subject,
+  distinctUntilChanged,
+  filter,
+  merge,
+  takeUntil,
+} from 'rxjs';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-patient-medicine-form',
   templateUrl: './patient-medicine-form.component.html',
-  styleUrls: ['./patient-medicine-form.component.css']
+  styleUrls: ['./patient-medicine-form.component.css'],
 })
 export class PatientMedicineFormComponent {
-
   searchText: any = '';
 
   activeOffcanvas = inject(NgbActiveOffcanvas);
@@ -38,44 +58,65 @@ export class PatientMedicineFormComponent {
     this.searchText = '';
   }
 
-  search: OperatorFunction<string, readonly string[]> = (text$: Observable<string>) => {
-    const debouncedText$ = text$.pipe(debounceTime(200), distinctUntilChanged());
-    const clicksWithClosedPopup$ = this.click$.pipe(filter(() => !this.instance?.isPopupOpen()));
+  search: OperatorFunction<string, readonly string[]> = (
+    text$: Observable<string>
+  ) => {
+    const debouncedText$ = text$.pipe(
+      debounceTime(200),
+      distinctUntilChanged()
+    );
+    const clicksWithClosedPopup$ = this.click$.pipe(
+      filter(() => !this.instance?.isPopupOpen())
+    );
     const inputFocus$ = this.focus$;
 
     return merge(debouncedText$, inputFocus$, clicksWithClosedPopup$).pipe(
       map((term) => {
         const selectedMedicines = this.selectedMedicinesForm.value.medicines;
-        const filteredMedicines = this.medicines.filter((m: any) => selectedMedicines.every((sm: any) => sm.med_id !== m.med_id));
+        const filteredMedicines = this.medicines.filter((m: any) =>
+          selectedMedicines.every((sm: any) => sm.med_id !== m.med_id)
+        );
 
         return term === ''
           ? filteredMedicines
-          : filteredMedicines.filter((v: any) => v.med_name.toLowerCase().indexOf(term.toLowerCase()) > -1)
-      }),
+          : filteredMedicines.filter(
+              (v: any) =>
+                v.med_name.toLowerCase().indexOf(term.toLowerCase()) > -1
+            );
+      })
     );
   };
 
-  formatter = (x: any) => x.med_name;
+  formatter = (x: any) => '';
 
   public getMedicines(): void {
-    this.dataService.getMedicines().subscribe(data => {
+    this.dataService.getMedicines().subscribe((data) => {
       this.medicines = data;
-    })
+    });
   }
 
   public buildSelectedMedicinesForm(): void {
     this.selectedMedicinesForm = this.fb.group({
-      medicines: this.fb.array([])
+      medicines: this.fb.array([]),
     });
   }
 
   public addNewMedicine(medicine: any) {
-    this.selectedMedicinesArray.push(this.fb.group({
-      med_id: [medicine.med_id],
-      med_name: [medicine.med_name],
-      req_quantity: [1, [Validators.required, Validators.min(1), Validators.max(medicine.quantity)]],
-      available: [medicine.quantity - 1]
-    }));
+    this.selectedMedicinesArray.push(
+      this.fb.group({
+        med_id: [medicine.med_id],
+        med_name: [medicine.med_name],
+        req_quantity: [
+          1,
+          [
+            Validators.required,
+            Validators.min(1),
+            Validators.max(medicine.quantity),
+          ],
+        ],
+        available: [medicine.quantity - 1],
+      })
+    );
   }
 
   getMax(id: number) {
@@ -90,7 +131,12 @@ export class PatientMedicineFormComponent {
   updateQuantity(v: any, i: number) {
     const sel_med = this.selectedMedicinesArray.at(i).value;
     const med = this.medicines.find((m: any) => m.med_id == sel_med.med_id);
-    this.selectedMedicinesArray.at(i).get('available')?.patchValue(parseInt(med ? med['quantity'] : '0', 10) - sel_med['req_quantity']);
+    this.selectedMedicinesArray
+      .at(i)
+      .get('available')
+      ?.patchValue(
+        parseInt(med ? med['quantity'] : '0', 10) - sel_med['req_quantity']
+      );
   }
 
   deleteItem(i: number) {
@@ -108,15 +154,14 @@ export class PatientMedicineFormComponent {
         p_id: this.patient.p_id,
         med_id: m.med_id,
         quantity: m.req_quantity,
-        date_issued: formatDate(new Date(), 'yyyy-MM-dd', 'en-US')
+        date_issued: formatDate(new Date(), 'yyyy-MM-dd', 'en-US'),
       });
     });
 
-    this.dataService.issueMedicine(payload).subscribe(response => {
+    this.dataService.issueMedicine(payload).subscribe((response) => {
       if (response && response?.status) {
         this.activeOffcanvas.close(response?.status);
       }
-
-    })
+    });
   }
 }

@@ -1,9 +1,75 @@
-<section class="page-details mb-5">
+<section class="page-details">
     <div class="page-title-cont">
-        <div class="mx-auto row">
-            <h1 class="page-title">Welcome to GMU Hospital Management System</h1>
+        <div class="mx-auto row d-flex justify-content-between">
+            <div class="col-auto d-flex justify-content-start align-items-center">
+                <h1 class="page-title">Welcome to GMU Hospital Management System</h1>
+            </div>
+            <div class="col-auto text-center me-4">
+                <div class="fw-normal fs-5">{{ date | date: 'longDate' }}</div>
+                <div class="fw-normal fs-3">{{ date | date : 'HH:mm:ss' }}</div>
+            </div>
         </div>
     </div>
 </section>
 
-<p>home works!</p>
+
+<section class="p-4">
+    <div class="d-flex">
+        <div class="col-6 d-flex-col align-items-center justify-content-center text-center p-4">
+            <h5>{{ bedStatisticsTitle }}</h5>
+            <ng-container *ngIf="bedStatisticsDataSource">
+                <fusioncharts width="500" type="pie2d" dataFormat="JSON" [dataSource]="bedStatisticsDataSource">
+                </fusioncharts>
+            </ng-container>
+        </div>
+        <div class="col-6 d-flex-col align-items-center justify-content-center text-center p-4">
+            <h5>{{ patientStatusStatisticsTitle }}</h5>
+            <ng-container *ngIf="patientStatusStatisticsDataSource">
+                <fusioncharts width="500" type="pie2d" dataFormat="JSON"
+                    [dataSource]="patientStatusStatisticsDataSource">
+                </fusioncharts>
+            </ng-container>
+        </div>
+    </div>
+    <div class="text-center p-4">
+        <h5>Patient Admits {{ patientAdmitStatisticsTitle }}</h5>
+        <div class="d-flex justify-content-center align-items-center my-4">
+            <div class="form-check px-4">
+                <input class="form-check-input" type="radio" name="dataType" value="MONTHLY" [(ngModel)]="type"
+                    id="monthly" (change)="fetchPatientAdmitData()">
+                <label class="form-check-label" for="monthly">
+                    Monthly
+                </label>
+            </div>
+            <div class="form-check px-4">
+                <input class="form-check-input" type="radio" name="dataType" value="YEARLY" [(ngModel)]="type"
+                    id="yearly" (change)="fetchPatientAdmitData()">
+                <label class="form-check-label" for="yearly">
+                    Yearly
+                </label>
+            </div>
+
+            <div *ngIf="type == 'YEARLY'" class="d-flex">
+                <div style="width: 10rem;" class="mx-2">
+                    <input type="number" min="2000" [max]="date.getFullYear()" class="form-control"
+                        placeholder="From year" [(ngModel)]="startYear" (change)="fetchPatientAdmitData()">
+                </div>
+                <div style="width: 10rem;" class="mx-2">
+                    <input type="number" min="2000" [max]="date.getFullYear()" class="form-control"
+                        placeholder="To year" [(ngModel)]="endYear" (change)="fetchPatientAdmitData()">
+                </div>
+            </div>
+
+            <div *ngIf="type == 'MONTHLY'" class="d-flex">
+                <div style="width: 10rem;" class="mx-2">
+                    <input type="number" min="2000" [max]="date.getFullYear()" class="form-control" placeholder="Year"
+                        [(ngModel)]="year" (change)="fetchPatientAdmitData()">
+                </div>
+            </div>
+        </div>
+        <ng-container *ngIf="patientAdmitStatisticsDataSource">
+            <fusioncharts width="800" type="Column2D" dataFormat="JSON" [dataSource]="patientAdmitStatisticsDataSource">
+            </fusioncharts>
+        </ng-container>
+    </div>
+</section>

@@ -1,0 +1,58 @@
+{
+  "patient_info": [
+    {
+      "p_name": "Sri Sai Kumar Gaddam",
+      "p_age": "25",
+      "doj": "2023-01-01",
+      "bedtype": "semi-private",
+      "address": "11108 Cavalier Ct, Apt 5B",
+      "city": "Fairfax",
+      "state": "Virginia",
+      "doctor_assigned": true,
+      "p_id": "N35KMEH21X5",
+      "status": "discharged",
+      "doc_id": "None"
+    },
+    {
+      "p_name": "Sri Sai Kumar Gaddam",
+      "p_age": "25",
+      "doj": "2024-04-13",
+      "bedtype": "private",
+      "address": "11108 Cavalier Ct, Apt 5B",
+      "city": "Fairfax",
+      "state": "Virginia",
+      "doctor_assigned": false,
+      "p_id": "UKBKBVQ5MEI",
+      "status": "discharged",
+      "doc_id": "None"
+    },
+    {
+      "p_name": "Sri Sai Kumar Gaddam",
+      "p_age": "25",
+      "doj": "2024-03-05",
+      "bedtype": "private",
+      "p_mobile": "703-397-7770",
+      "p_email": "sgaddam7@gmu.edu",
+      "address": "11108 Cavalier Ct, Apt 5B",
+      "city": "Fairfax",
+      "state": "Virginia",
+      "doctor_assigned": true,
+      "p_id": "A6ZJOERWYJD",
+      "status": "active",
+      "doc_id": "7L0I9YBRJ58"
+    }
+  ],
+  "doctor_info": [
+    {
+      "doc_id": "4VV1QD3KM94",
+      "doc_name": "Georgette Koppel",
+      "doc_age": 43,
+      "specialization": "Georgette",
+      "email": "gkoppel0@nbcnews.com",
+      "mobile": "307-722-5130",
+      "address": "60 Pond Avenue",
+      "state": "Wyoming",
+      "city": "Cheyenne"
+    }
+  ]
+}

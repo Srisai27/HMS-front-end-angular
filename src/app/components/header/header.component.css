@@ -1,0 +1,14 @@
+.search-box {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 2rem;
+}
+
+.search-btn {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+}

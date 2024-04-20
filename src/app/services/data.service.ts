@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -12,16 +12,16 @@ export class DataService {
   constructor(private http: HttpClient) { }
 
   public getBedtypes(): Observable<any> {
-    const url = '/assets/mock/roomtypes.json';
-    // const url = `${HOST}/${ROOT}/get_room_type`;
+    // const url = '/assets/mock/roomtypes.json';
+    const url = `${HOST}/${ROOT}/get_room_type`;
     return this.http.get(url);
   }
 
   // Doctors
 
   public getDoctors(): Observable<any> {
-    const url = '/assets/mock/doctors.json';
-    // const url = `${HOST}/${ROOT}/get_doctors`;
+    // const url = '/assets/mock/doctors.json';
+    const url = `${HOST}/${ROOT}/get_doctors`;
     return this.http.get(url);
   }
 
@@ -41,16 +41,16 @@ export class DataService {
   }
 
   public getDoctorDetails(id: string): Observable<any> {
-    const url = '/assets/mock/doctor-details.json';
-    // const url = `${HOST}/${ROOT}/get_patients_by_doctor/${id}`;
+    // const url = '/assets/mock/doctor-details.json';
+    const url = `${HOST}/${ROOT}/get_patients_by_doctor/${id}`;
     return this.http.get(url);
   }
 
   //// Patients
 
   public getPatients(): Observable<any> {
-    const url = '/assets/mock/patients.json';
-    // const url = `${HOST}/${ROOT}/get_patient`;
+    // const url = '/assets/mock/patients.json';
+    const url = `${HOST}/${ROOT}/get_patient`;
     return this.http.get(url);
   }
 
@@ -70,17 +70,16 @@ export class DataService {
   }
 
   public getPatientDetails(id: string): Observable<any> {
-    const url = '/assets/mock/patient-details.json';
-    // const url = `${HOST}/${ROOT}/get_all_patient_details/${id}`;
+    // const url = '/assets/mock/patient-details.json';
+    const url = `${HOST}/${ROOT}/get_all_patient_details/${id}`;
     return this.http.get(url);
   }
 
   // Medicines
 
   public getMedicines(): Observable<any> {
-    const url = '/assets/mock/medicines.json';
-
-    // const url = `${HOST}/${ROOT}/get_medicines`;
+    // const url = '/assets/mock/medicines.json';
+    const url = `${HOST}/${ROOT}/get_medicines`;
     return this.http.get(url);
   }
 
@@ -92,8 +91,8 @@ export class DataService {
   // Diagnostics
 
   public getDiagnostics(): Observable<any> {
-    const url = '/assets/mock/diagnostics.json';
-    // const url = `${HOST}/${ROOT}/get_diagnostics`;
+    // const url = '/assets/mock/diagnostics.json';
+    const url = `${HOST}/${ROOT}/get_diagnostics`;
     return this.http.get(url);
   }
 
@@ -120,20 +119,53 @@ export class DataService {
   // Billings
 
   public getBillingDetails(p_id: string): Observable<any> {
-    const url = '/assets/mock/get_bill.json';
-    // const url = `${HOST}/${ROOT}/get_bill/${p_id}`;
+    // const url = '/assets/mock/get_bill.json';
+    const url = `${HOST}/${ROOT}/get_bill/${p_id}`;
     return this.http.get(url);
   }
 
   public calculateBill(p_id: string): Observable<any> {
-    const url = '/assets/mock/calculate_bill.json';
-    // const url = `${HOST}/${ROOT}/calculate_bill/${p_id}`;
+    // const url = '/assets/mock/calculate_bill.json';
+    const url = `${HOST}/${ROOT}/calculate_bill/${p_id}`;
     return this.http.get(url);
   }
 
   public makePayment(p_id: string): Observable<any> {
-    const url = '/assets/mock/calculate_bill.json';
-    // const url = `${HOST}/${ROOT}/make_payment/${p_id}`;
+    // const url = '/assets/mock/calculate_bill.json';
+    const url = `${HOST}/${ROOT}/make_payment/${p_id}`;
     return this.http.post(url, {});
+  }
+
+  // Visualizations
+
+  public getBedAllocationData(): Observable<any> {
+    // const url = `/assets/mock/bed_stats.json`;
+    const url = `${HOST}/${ROOT}/get_bed_statistics`;
+    return this.http.get(url);
+  }
+
+  public getPatientStatusData(): Observable<any> {
+    // const url = '/assets/mock/patient_stats.json';
+    const url = `${HOST}/${ROOT}/get_status_statistics`;
+    return this.http.get(url);
+  }
+
+  public getPatientAdmitData(params: any): Observable<any> {
+    let url = '';
+    if (params.type == 'YEARLY') {
+      // url = '/assets/mock/get_time_stats_YEARLY.json';
+      url = `${HOST}/${ROOT}/get_timely_stat?type=${params.type}&startYear=${params.startYear}&endYear=${params.endYear}`;
+    } else {
+      // url = '/assets/mock/get_time_stats_MONTHLY.json';
+      url = `${HOST}/${ROOT}/get_timely_stat?type=${params.type}&year=${params.year}`;
+    }
+    return this.http.get(url);
+  }
+
+  // Search
+  public searchData(searchStr: string) {
+    // const url = '/assets/mock/search-results.json';
+    const url = `${HOST}/${ROOT}/search?query=${searchStr}`;
+    return this.http.get(url);
   }
 }
