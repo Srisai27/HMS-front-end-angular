@@ -46,7 +46,7 @@ export class DoctorComponent {
   public deleteDoctor(doc_id: string): void {
     this.dataservice.deleteDoctor(doc_id).subscribe((response) => {
       if (response?.status) {
-        this.showConfirmation(`Patient is successfully deleted`);
+        this.showConfirmation(`Doctor is successfully deleted`);
         this.getDoctors();
       }
     });
