@@ -319,3 +319,6 @@ app-student-survey {
   height: calc(100vh - 68px) !important;
   overflow: auto;
 }
+.flt{
+  float: right;
+}

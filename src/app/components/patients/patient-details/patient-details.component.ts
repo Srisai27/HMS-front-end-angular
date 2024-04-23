@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -11,12 +11,17 @@ export class PatientDetailsComponent {
   public patientId?: string = '';
   patientDetails: any = [];
 
-  constructor(private route: ActivatedRoute, private dataservice: DataService) {
-    this.patientId = this.route.snapshot.paramMap.get('id') || '';
-    if (this.patientId != '') {
-      this.dataservice.getPatientDetails(this.patientId).subscribe((data) => {
-        this.patientDetails = data;
-      });
-    }
+  constructor(private route: ActivatedRoute, private router:Router, private dataservice: DataService) {
+
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.patientId = this.route.snapshot.paramMap.get('id') || '';
+        if (this.patientId !== '') {
+          this.dataservice.getPatientDetails(this.patientId).subscribe((data) => {
+            this.patientDetails = data;
+          });
+        }
+      }
+    });
   }
 }
