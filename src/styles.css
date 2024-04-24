@@ -272,9 +272,6 @@ ul.navbar-nav::before {
   border-bottom: 2px solid var(--green);
 }
 
-app-student-survey {
-  background-color: whitesmoke !important;
-}
 
 .status-badge {
   border: 1px solid rgb(var(--color));
@@ -315,6 +312,7 @@ app-student-survey {
   height: calc(100vh - 68px) !important;
   overflow: auto;
 }
+
 .flt {
   float: right;
 }
