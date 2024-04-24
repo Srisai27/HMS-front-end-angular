@@ -14,8 +14,11 @@
             </tr>
         </thead>
         <tbody>
+            <tr class="text-center" *ngIf="diagnostics.length == 0">
+                <td colspan="4">No data available!</td>
+            </tr>
             <tr *ngFor="let record of diagnostics; let i = index;">
-                <th class="align-middle" scope="row">{{ i+1 }}</th>
+                <th class="align-middle" scope="row">{{ record.idx+1 }}</th>
                 <td class="align-middle">{{ record?.d_name }}</td>
                 <td class="align-middle ">{{ record?.d_cost }}</td>
                 <td>
@@ -39,4 +42,17 @@
             </tr>
         </tbody>
     </table>
+
+    <div class="d-flex justify-content-end p-2">
+        <select class="form-select me-3" style="width: auto" [(ngModel)]="pageSize"
+            (ngModelChange)="refreshDiagnostics()">
+            <option [ngValue]="5">5 items per page</option>
+            <option [ngValue]="10">10 items per page</option>
+            <option [ngValue]="15">15 items per page</option>
+            <option [ngValue]="this.diagnostics_all.length">All items</option>
+        </select>
+        <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize"
+            (pageChange)="refreshDiagnostics()">
+        </ngb-pagination>
+    </div>
 </div>

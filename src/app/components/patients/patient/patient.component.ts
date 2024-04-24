@@ -20,14 +20,33 @@ export class PatientComponent {
 
   public patients: any = [];
 
+  page = 1;
+  pageSize = 5;
+  collectionSize = 0;
+  patients_all: any = [];
+
   constructor(private dataService: DataService) {
     this.getPatients();
   }
 
   public getPatients(): void {
     this.dataService.getPatients().subscribe((data) => {
-      this.patients = data;
+      this.patients_all = data;
+      this.collectionSize = this.patients_all.length;
+      this.refreshPatients();
     });
+  }
+
+  public refreshPatients() {
+    this.patients = this.patients_all
+      .map((p: any, i: number) => ({
+        idx: i,
+        ...p,
+      }))
+      .slice(
+        (this.page - 1) * this.pageSize,
+        (this.page - 1) * this.pageSize + this.pageSize
+      );
   }
 
   public openPatientForm(patient: any = undefined): void {

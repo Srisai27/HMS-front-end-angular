@@ -42,6 +42,7 @@ export class PatientMedicineFormComponent {
   changesUnsubscribe$ = new Subject();
 
   @Input() patient: any;
+  @Input() existingMedicines: any;
 
   medicines = [];
   selectedMedicines = [];
@@ -73,8 +74,11 @@ export class PatientMedicineFormComponent {
     return merge(debouncedText$, inputFocus$, clicksWithClosedPopup$).pipe(
       map((term) => {
         const selectedMedicines = this.selectedMedicinesForm.value.medicines;
-        const filteredMedicines = this.medicines.filter((m: any) =>
-          selectedMedicines.every((sm: any) => sm.med_id !== m.med_id)
+        const filteredMedicines = this.medicines.filter(
+          (m: any) =>
+            selectedMedicines.every((sm: any) => sm.med_id !== m.med_id) &&
+            this.existingMedicines.every((sm: any) => sm.med_id !== m.med_id) &&
+            m.quantity > 0
         );
 
         return term === ''

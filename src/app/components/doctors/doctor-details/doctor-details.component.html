@@ -25,6 +25,9 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <tr class="text-center" *ngIf="doctorDetails.patient_info.length == 0">
+                        <td colspan="7">No data available!</td>
+                    </tr>
                     <tr *ngFor="let record of doctorDetails.patient_info; let i = index;">
                         <th class="align-middle" scope="row">{{ i+1 }}</th>
                         <td class="align-middle">

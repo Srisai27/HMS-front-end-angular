@@ -9,7 +9,7 @@ const ROOT = 'gmushs';
   providedIn: 'root',
 })
 export class DataService {
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   public getBedtypes(): Observable<any> {
     // const url = '/assets/mock/roomtypes.json';

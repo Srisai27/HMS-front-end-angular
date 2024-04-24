@@ -197,10 +197,6 @@ ul.navbar-nav::before {
   color: #000;
 }
 
-
-
-
-
 .footer-logo {
   position: relative;
 }
@@ -319,6 +315,13 @@ app-student-survey {
   height: calc(100vh - 68px) !important;
   overflow: auto;
 }
-.flt{
+.flt {
   float: right;
+}
+
+.pagination {
+  margin: 0 !important;
+
+  --bs-pagination-color: var(--green) !important;
+  --bs-pagination-active-bg: var(--green) !important;
 }

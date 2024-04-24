@@ -14,6 +14,11 @@ export class DoctorComponent {
   private offcanvasService = inject(NgbOffcanvas);
   public doctors: any = [];
 
+  page = 1;
+  pageSize = 5;
+  collectionSize = 0;
+  doctors_all: any = [];
+
   constructor(private dataservice: DataService) {
     this.getDoctors();
   }
@@ -40,9 +45,24 @@ export class DoctorComponent {
 
   public getDoctors(): void {
     this.dataservice.getDoctors().subscribe((data) => {
-      this.doctors = data;
+      this.doctors_all = data;
+      this.collectionSize = this.doctors_all.length;
+      this.refreshDoctors();
     });
   }
+
+  public refreshDoctors() {
+    this.doctors = this.doctors_all
+      .map((p: any, i: number) => ({
+        idx: i,
+        ...p,
+      }))
+      .slice(
+        (this.page - 1) * this.pageSize,
+        (this.page - 1) * this.pageSize + this.pageSize
+      );
+  }
+
   public deleteDoctor(doc_id: string): void {
     this.dataservice.deleteDoctor(doc_id).subscribe((response) => {
       if (response?.status) {

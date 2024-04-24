@@ -28,6 +28,9 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <tr class="text-center" *ngIf="selectedMedicinesArray.controls.length == 0">
+                        <td colspan="5">No medicines added</td>
+                    </tr>
                     <tr *ngFor="let x of selectedMedicinesArray.controls; let i = index;" [formGroupName]="i">
                         <th class="align-middle" scope="row">{{ i+1 }}</th>
                         <td class="align-middle">
