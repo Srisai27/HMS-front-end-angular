@@ -66,16 +66,15 @@ export class PatientDiagnosticFormComponent {
         const selectedDiagnosis = this.selectedDiagnosisForm.value.diagnosis;
         const filteredDiagnosis = this.diagnosis.filter(
           (m: any) =>
-            selectedDiagnosis.every((sm: any) => sm.d_id !== m.d_id) &&
-            this.existingDiagnostics.every((sm: any) => sm.d_id !== m.d_id)
+            selectedDiagnosis.every((sm: any) => sm.d_id !== m.d_id)
         );
 
         return term === ''
           ? filteredDiagnosis
           : filteredDiagnosis.filter(
-              (v: any) =>
-                v.d_name.toLowerCase().indexOf(term.toLowerCase()) > -1
-            );
+            (v: any) =>
+              v.d_name.toLowerCase().indexOf(term.toLowerCase()) > -1
+          );
       })
     );
   };

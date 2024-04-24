@@ -77,16 +77,15 @@ export class PatientMedicineFormComponent {
         const filteredMedicines = this.medicines.filter(
           (m: any) =>
             selectedMedicines.every((sm: any) => sm.med_id !== m.med_id) &&
-            this.existingMedicines.every((sm: any) => sm.med_id !== m.med_id) &&
             m.quantity > 0
         );
 
         return term === ''
           ? filteredMedicines
           : filteredMedicines.filter(
-              (v: any) =>
-                v.med_name.toLowerCase().indexOf(term.toLowerCase()) > -1
-            );
+            (v: any) =>
+              v.med_name.toLowerCase().indexOf(term.toLowerCase()) > -1
+          );
       })
     );
   };
